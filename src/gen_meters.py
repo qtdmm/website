@@ -20,18 +20,30 @@ def esc(s: str) -> str:
 
 
 def parse(md: str):
+    """Reads the table by its header, so added columns (Chip) do not shift
+    the others. Models marked with the footnote sign are unconfirmed."""
     rows = []
+    header = None
     for line in md.splitlines():
         if not line.startswith("|"):
             continue
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if cells[0] in ("Vendor",) or set(cells[0]) <= {"-"}:
+        if cells[0] == "Vendor":
+            header = [c.lower() for c in cells]
             continue
-        vendor, model, proto, serial, lines, counts = cells[:6]
+        if header is None or set(cells[0]) <= {"-"}:
+            continue
+        d = dict(zip(header, cells))
+        model = d.get("model", "")
         rows.append({
-            "vendor": vendor, "model": model,
-            "proto": proto.strip("`"), "serial": serial,
-            "lines": lines, "counts": counts,
+            "vendor": d.get("vendor", ""),
+            "model": model.replace("¹", "").strip(),
+            "unconfirmed": "¹" in model,
+            "chip": d.get("chip", "-"),
+            "proto": d.get("protocol", "").strip("`"),
+            "serial": d.get("serial", ""),
+            "lines": d.get("lines", ""),
+            "counts": d.get("counts", ""),
         })
     return rows
 
@@ -46,9 +58,11 @@ def main():
 
     tr = []
     for r in rows:
+        mark = ' <sup title="added from chip data, not yet confirmed with QtDMM">?</sup>' if r["unconfirmed"] else ""
         tr.append(
             f'        <tr data-vendor="{esc(r["vendor"])}">'
-            f'<td>{esc(r["vendor"])}</td><td>{esc(r["model"])}</td>'
+            f'<td>{esc(r["vendor"])}</td><td>{esc(r["model"])}{mark}</td>'
+            f'<td>{esc(r["chip"])}</td>'
             f'<td><code>{esc(r["proto"])}</code></td><td>{esc(r["serial"])}</td>'
             f'<td>{esc(r["lines"])}</td><td>{esc(r["counts"])}</td></tr>'
         )
@@ -59,7 +73,8 @@ def main():
                 .replace("@VENDOR_OPTIONS@", opts)
                 .replace("@N_METERS@", str(len(rows)))
                 .replace("@N_VENDORS@", str(len(vendors)))
-                .replace("@N_PROTOS@", str(len(protos))))
+                .replace("@N_PROTOS@", str(len(protos)))
+                .replace("@N_UNCONFIRMED@", str(sum(r["unconfirmed"] for r in rows))))
     OUT.write_text(html, encoding="utf-8")
     print(f"{OUT.relative_to(ROOT)}: {len(rows)} meters, {len(vendors)} vendors, {len(protos)} protocols")
 
