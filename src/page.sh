@@ -43,7 +43,7 @@ cat <<FOOT
       <div>© 2001–2016 Matthias Toussaint · © 2016–2026 tuxmaster and contributors · GPL-3.0</div>
       <nav>
         <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
-        <a href="docs/">Handbook</a>
+        <a href="docs/" target="_blank" rel="noopener">Handbook</a>
         <a href="contact.html">Contact</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
