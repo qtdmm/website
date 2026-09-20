@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supported meters – QtDMM</title>
+  <meta name="description" content="All digital multimeters supported by QtDMM with protocol and serial settings: Uni-T, Voltcraft, Metex, Mastech, PeakTech, Tenma and more.">
+  <link rel="icon" href="img/qtdmm_128.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt=""><span>Qt<b>DMM</b></span></a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="meters.html" class="active">Supported Meters</a>
+        <a href="history.html">History</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Supported meters</div>
+        <h2>83 meters from 19 vendors</h2>
+        <p>Choosing a model in <em>Settings → DMM</em> fills in these serial parameters. A meter that is not listed but uses one of the 15 protocols below usually works with <em>Manual settings</em> — see <a href="docs/user/connecting/">Connecting a meter</a>.</p>
+      </div>
+      <div class="table-tools">
+        <input type="search" id="meter-filter" placeholder="Filter by vendor, model or protocol …" aria-label="Filter meters">
+        <select id="vendor-filter" aria-label="Vendor"><option value="">All vendors</option><option value="Digitech">Digitech</option><option value="Digitek">Digitek</option><option value="Duratool">Duratool</option><option value="ELV">ELV</option><option value="Generic">Generic</option><option value="HoldPeak">HoldPeak</option><option value="Iso-Tech">Iso-Tech</option><option value="MASTECH">MASTECH</option><option value="McVoice">McVoice</option><option value="Metex">Metex</option><option value="PeakTech">PeakTech</option><option value="Radioshack">Radioshack</option><option value="Sinometer">Sinometer</option><option value="TekPower">TekPower</option><option value="Tenma">Tenma</option><option value="Uni-Trend">Uni-Trend</option><option value="Vichy">Vichy</option><option value="Voltcraft">Voltcraft</option><option value="Wintex">Wintex</option></select>
+        <span class="count-note" id="meter-count"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="meters">
+          <thead>
+            <tr><th>Vendor</th><th>Model</th><th>Protocol</th><th>Serial</th><th>Lines</th><th>Counts</th></tr>
+          </thead>
+          <tbody>
+        <tr data-vendor="Digitech"><td>Digitech</td><td>QM1350</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Digitech"><td>Digitech</td><td>QM1462</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Digitech"><td>Digitech</td><td>QM1537</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Digitech"><td>Digitech</td><td>QM1538</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Digitek"><td>Digitek</td><td>DT-9062</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Digitek"><td>Digitek</td><td>DT4000ZC</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Digitek"><td>Digitek</td><td>INO2513</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Duratool"><td>Duratool</td><td>DO3122</td><td><code>DO3122Continuous</code></td><td>9600 8N1</td><td>-</td><td>4000</td></tr>
+        <tr data-vendor="ELV"><td>ELV</td><td>M9803R</td><td><code>M9803RContinuous</code></td><td>9600 7E1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 4000 count</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 6000 count</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
+        <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 8000 count</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>8000</td></tr>
+        <tr data-vendor="HoldPeak"><td>HoldPeak</td><td>HP-90EPC</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Iso-Tech"><td>Iso-Tech</td><td>IDM 73</td><td><code>CyrustekES51986</code></td><td>19200 7O1</td><td>DTR</td><td>6000</td></tr>
+        <tr data-vendor="MASTECH"><td>MASTECH</td><td>M9803R</td><td><code>M9803RContinuous</code></td><td>9600 7E1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="MASTECH"><td>MASTECH</td><td>MAS-343</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="MASTECH"><td>MASTECH</td><td>MAS-345</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="McVoice"><td>McVoice</td><td>M-345pro</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="McVoice"><td>McVoice</td><td>M-980T</td><td><code>M9803RContinuous</code></td><td>9600 7N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3660D</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3830D</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3840D</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3850D</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3850M</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3870D</td><td><code>Metex14</code></td><td>1200 7N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-4650C</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>20000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-11</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-22</td><td><code>Metex14</code></td><td>2400 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-32</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-42</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>universal system 9160</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>3315</td><td><code>CyrustekES51962</code></td><td>2400 7N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>3330</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>3430</td><td><code>QM1537Continuous</code></td><td>19200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4010</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4015A</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>100000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4360</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4390</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>451</td><td><code>PeakTech10</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Radioshack"><td>Radioshack</td><td>22-805 DMM</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Radioshack"><td>Radioshack</td><td>22-812</td><td><code>RS22812Continuous</code></td><td>4800 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Radioshack"><td>Radioshack</td><td>RS22-168A</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Sinometer"><td>Sinometer</td><td>MAS-343</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="TekPower"><td>TekPower</td><td>TP4000ZC</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Tenma"><td>Tenma</td><td>72-1016</td><td><code>CyrustekES51986</code></td><td>19200 7O1</td><td>DTR</td><td>6000</td></tr>
+        <tr data-vendor="Tenma"><td>Tenma</td><td>72-7732</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>40000</td></tr>
+        <tr data-vendor="Tenma"><td>Tenma</td><td>72-7745</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT60A</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT60E</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT61B</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT61C</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT61D</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT61E</td><td><code>CyrustekES51922</code></td><td>19200 7O1</td><td>DTR</td><td>22000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT70B</td><td><code>CyrustekES51962</code></td><td>2400 7N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT71B</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>200000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT71CDE</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>40000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT803</td><td><code>CyrustekES51986</code></td><td>19200 7O1</td><td>DTR</td><td>6000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT804</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>40000</td></tr>
+        <tr data-vendor="Vichy"><td>Vichy</td><td>VC99</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3610D</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3650D</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3860</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>20000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4650CR</td><td><code>Voltcraft14Continuous</code></td><td>1200 7N2</td><td>DTR</td><td>20000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660A</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660M</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-11</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-22T</td><td><code>Metex14</code></td><td>2400 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-32</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-42</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>MXD-4660A</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 630</td><td><code>Voltcraft14Continuous</code></td><td>4800 7N1</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 635</td><td><code>Voltcraft15Continuous</code></td><td>2400 7N1</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 650</td><td><code>Voltcraft14Continuous</code></td><td>4800 7N1</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 655</td><td><code>Voltcraft15Continuous</code></td><td>2400 7N1</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 670</td><td><code>Voltcraft14Continuous</code></td><td>4800 7N1</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 820</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 840</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 870</td><td><code>VC870Continuous</code></td><td>9600 8N1</td><td>DTR</td><td>40000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 920</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>40000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 940</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>40000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 960</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>40000</td></tr>
+        <tr data-vendor="Wintex"><td>Wintex</td><td>TD2200</td><td><code>CyrustekES51922</code></td><td>19200 7N1</td><td>DTR</td><td>22000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="count-note" style="margin-top:14px"><em>Serial</em> is baud rate, data bits, parity and stop bits. <em>Lines</em> are the control lines the cable needs driven. <em>Counts</em> is the display resolution. Not every entry has been confirmed on hardware recently; if you can confirm one, or get an unlisted meter working, please <a href="contact.html">tell us</a>. This list is generated from the decoder registrations in the source code.</p>
+    </div>
+  </section>
+  <script src="js/meters.js"></script>
+  <footer>
+    <div class="wrap">
+      <div>© 2001–2016 Matthias Toussaint · © 2016–2026 tuxmaster and contributors · GPL-3.0</div>
+      <nav>
+        <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

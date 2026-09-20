@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital multimeter readout and recorder – QtDMM</title>
+  <meta name="description" content="QtDMM reads and records digital multimeters on Linux, Windows, macOS and FreeBSD. Analog meter, LCD display, transient recorder, ~90 supported meters. Free software, GPL-3.0.">
+  <link rel="icon" href="img/qtdmm_128.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt=""><span>Qt<b>DMM</b></span></a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="features.html">Features</a>
+        <a href="meters.html">Supported Meters</a>
+        <a href="history.html">History</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Free software · Linux · Windows · macOS · FreeBSD</div>
+        <h1>Your multimeter, <em>on screen</em>.</h1>
+        <p class="lead">QtDMM reads digital multimeters over serial, USB‑HID and network cables, shows the reading on an analog needle instrument and an LCD panel, and records it over hours or days with a built‑in transient recorder.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="download.html">Download</a>
+          <a class="btn btn-outline" href="meters.html">Is my meter supported?</a>
+        </div>
+        <p class="platforms">Works with <b>Uni‑T</b>, <b>Voltcraft</b>, <b>Metex</b>, <b>Mastech</b>, <b>PeakTech</b> and many more — including meters whose vendor software stopped working years ago.</p>
+      </div>
+      <div class="hero-visual">
+        <img src="img/meter.png" alt="QtDMM analog meter panel showing 385.6 mV AC" width="480" height="270">
+        <img class="lcd-shot" src="img/display.png" alt="QtDMM LCD display panel showing -3.856 mV DC with min/max and bargraph" width="520" height="200">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Features</div>
+        <h2>Everything a bench readout should do</h2>
+        <p>Made for hobbyists, repair shops and labs who want to see and log what their meter measures — without proprietary software.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">◔</div>
+          <h3>Analog needle instrument</h3>
+          <p>Studio VU‑meter style dial with needle ballistics, red overrange zone and OL lamp. Auto‑ranging scale, dark or ivory face.</p>
+          <img class="shot" src="img/meter_ol.png" alt="Analog meter showing overload">
+        </div>
+        <div class="card">
+          <div class="icon">▤</div>
+          <h3>LCD display panel</h3>
+          <p>Seven‑segment digits, bargraph, min/max, mode annunciators — scales with the window and docks anywhere.</p>
+          <img class="shot" src="img/display_two.png" alt="LCD display with two values">
+        </div>
+        <div class="card">
+          <div class="icon">∿</div>
+          <h3>Transient recorder</h3>
+          <p>Start manually, at a scheduled time or when a threshold is crossed. Zoom, pan, cursor read‑out, integration curve, print and CSV export.</p>
+          <div class="ph shot">Recorder screenshot<small>tmp/screenshots/recorder.png</small></div>
+        </div>
+        <div class="card">
+          <div class="icon">⇄</div>
+          <h3>Any cable, any port</h3>
+          <p>RS‑232 and USB‑serial, USB‑HID cables (UT803, UT61E‑style HE2325U), RFC2217 remote serial over the network, or sigrok‑cli as a backend.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⧉</div>
+          <h3>Several meters at once</h3>
+          <p>One QtDMM per meter, all recording in sync. Instances see each other and can be started and stopped together.</p>
+        </div>
+        <div class="card">
+          <div class="icon">?</div>
+          <h3>Handbook built in</h3>
+          <p>Press F1 for the full manual — the same pages you find <a href="docs/">online here</a>: connecting, recording, troubleshooting, shortcuts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Supported meters</div>
+        <h2>About ninety meters, one program</h2>
+        <p>Every model is selected from a vendor/model list that fills in the serial settings for you. Unknown meters that speak a known protocol work with manual settings.</p>
+      </div>
+      <div class="stat-row">
+        <div><span class="stat">83</span><small>meter models</small></div>
+        <div><span class="stat">24</span><small>protocol decoders</small></div>
+        <div><span class="stat">4</span><small>connection backends</small></div>
+      </div>
+      <div class="vendor-cloud">
+        <span>Uni‑Trend</span><span>Voltcraft</span><span>Metex</span><span>MASTECH</span><span>PeakTech</span><span>Tenma</span><span>Digitech</span><span>Digitek</span><span>Radioshack</span><span>ELV</span><span>McVoice</span><span>Vichy</span><span>TekPower</span><span>HoldPeak</span><span>Iso‑Tech</span><span>Duratool</span><span>DTM0660 generic</span>
+      </div>
+      <a class="btn btn-outline" href="meters.html">Full list of supported meters →</a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Get QtDMM</h2>
+      <p>Windows installer and portable ZIP, source for Linux, macOS and FreeBSD. Free software under the GNU GPL v3 — no registration, no telemetry.</p>
+      <div class="actions" style="justify-content:center">
+        <a class="btn btn-primary" href="download.html">Download</a>
+        <a class="btn btn-outline" href="https://github.com/tuxmaster/QtDMM">Source on GitHub</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div>© 2001–2016 Matthias Toussaint · © 2016–2026 tuxmaster and contributors · GPL-3.0</div>
+      <nav>
+        <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

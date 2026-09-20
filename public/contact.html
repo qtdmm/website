@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – QtDMM</title>
+  <meta name="description" content="Report bugs, request support for a meter or contribute to QtDMM on GitHub.">
+  <link rel="icon" href="img/qtdmm_128.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt=""><span>Qt<b>DMM</b></span></a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="meters.html">Supported Meters</a>
+        <a href="history.html">History</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a class="cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Contact</div>
+        <h2>Questions, bugs, new meters</h2>
+        <p>QtDMM is developed in the open on GitHub. That is the fastest way to reach the maintainers — and your report helps the next person with the same meter.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">!</div>
+          <h3>Bug reports &amp; feature requests</h3>
+          <p>Open an issue on the project page. Please include your operating system, the meter model and cable, and — for decoding problems — the raw bytes from <code>qtdmm --debug</code>.</p>
+          <a href="https://github.com/tuxmaster/QtDMM/issues">github.com/tuxmaster/QtDMM/issues →</a>
+        </div>
+        <div class="card">
+          <div class="icon">+</div>
+          <h3>Adding a meter</h3>
+          <p>If your meter speaks one of the known protocols it usually only needs a new entry with the right serial settings. Otherwise a protocol capture (a few readings in each mode) lets us write a decoder. The <a href="docs/dev/">developer pages</a> explain how.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⑂</div>
+          <h3>Contributing</h3>
+          <p>Pull requests are welcome: code, translations, packaging for your distribution, or a confirmation that your meter works. The current Qt 6 work happens in the <a href="https://github.com/redPanther/QtDMM">redPanther/QtDMM</a> fork and flows upstream via pull requests.</p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:32px">Site operator and legal notice: see <a href="impressum.html">Impressum</a> (German).</p>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div>© 2001–2016 Matthias Toussaint · © 2016–2026 tuxmaster and contributors · GPL-3.0</div>
+      <nav>
+        <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

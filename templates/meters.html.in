@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supported meters – QtDMM</title>
+  <meta name="description" content="All digital multimeters supported by QtDMM with protocol and serial settings: Uni-T, Voltcraft, Metex, Mastech, PeakTech, Tenma and more.">
+  <link rel="icon" href="img/qtdmm_128.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt=""><span>Qt<b>DMM</b></span></a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="meters.html" class="active">Supported Meters</a>
+        <a href="history.html">History</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Supported meters</div>
+        <h2>@N_METERS@ meters from @N_VENDORS@ vendors</h2>
+        <p>Choosing a model in <em>Settings → DMM</em> fills in these serial parameters. A meter that is not listed but uses one of the @N_PROTOS@ protocols below usually works with <em>Manual settings</em> — see <a href="docs/user/connecting/">Connecting a meter</a>.</p>
+      </div>
+      <div class="table-tools">
+        <input type="search" id="meter-filter" placeholder="Filter by vendor, model or protocol …" aria-label="Filter meters">
+        <select id="vendor-filter" aria-label="Vendor"><option value="">All vendors</option>@VENDOR_OPTIONS@</select>
+        <span class="count-note" id="meter-count"></span>
+      </div>
+      <div class="table-wrap">
+        <table id="meters">
+          <thead>
+            <tr><th>Vendor</th><th>Model</th><th>Protocol</th><th>Serial</th><th>Lines</th><th>Counts</th></tr>
+          </thead>
+          <tbody>
+@ROWS@
+          </tbody>
+        </table>
+      </div>
+      <p class="count-note" style="margin-top:14px"><em>Serial</em> is baud rate, data bits, parity and stop bits. <em>Lines</em> are the control lines the cable needs driven. <em>Counts</em> is the display resolution. Not every entry has been confirmed on hardware recently; if you can confirm one, or get an unlisted meter working, please <a href="contact.html">tell us</a>. This list is generated from the decoder registrations in the source code.</p>
+    </div>
+  </section>
+  <script src="js/meters.js"></script>
+  <footer>
+    <div class="wrap">
+      <div>© 2001–2016 Matthias Toussaint · © 2016–2026 tuxmaster and contributors · GPL-3.0</div>
+      <nav>
+        <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

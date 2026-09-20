@@ -1,0 +1,9 @@
+# Overlay for the handbook build on qtdmm.de. Inherits the project's mkdocs.yml
+# and only changes what the website needs: no CDN resources (privacy page
+# promises none), a canonical URL, and an Edit link.
+INHERIT: ../../rp-master/mkdocs.yml
+docs_dir: ../../rp-master/docs
+site_url: https://qtdmm.de/docs/
+theme:
+  name: mkdocs
+  highlightjs: false

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Features – QtDMM</title>
+  <meta name="description" content="QtDMM features: analog meter, LCD display, transient recorder with thresholds and CSV export, serial/HID/RFC2217/sigrok backends, multiple instances.">
+  <link rel="icon" href="img/qtdmm_128.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt=""><span>Qt<b>DMM</b></span></a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html" class="active">Features</a>
+        <a href="meters.html">Supported Meters</a>
+        <a href="history.html">History</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Features</div>
+        <h2>What QtDMM does</h2>
+        <p>A readout that looks like an instrument, a recorder that behaves like a chart recorder — and a device list that saves you from guessing baud rates.</p>
+      </div>
+
+      <div class="feature-row">
+        <div class="media"><img src="img/meter.png" alt="Analog meter panel" width="480" height="270"></div>
+        <div>
+          <h3>Analog meter</h3>
+          <p>A procedurally drawn needle instrument in the style of a studio VU meter: dark or ivory face, mirrored‑scale ballistics on the needle, a red overrange zone and an OL lamp that lights when the meter reports overload.</p>
+          <ul>
+            <li>Auto‑ranging scale that follows the meter's range and unit</li>
+            <li>Bipolar scale for signed readings, secondary readout for min/max or a second value</li>
+            <li>HOLD indicator, current/max fields</li>
+            <li>Dockable panel — stack it, float it, or run it full‑screen on a second display</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="media"><img src="img/display_diode.png" alt="LCD display panel in diode test mode" width="520" height="200"></div>
+        <div>
+          <h3>LCD display</h3>
+          <p>Seven‑segment digits on a warm LCD‑green face with ghost segments, a 40‑segment bargraph and the annunciators you know from the meter itself: HOLD, AUTO/MANU, AC/DC, diode, continuity, REL.</p>
+          <ul>
+            <li>Main value plus MIN and MAX lines</li>
+            <li>Scales with the window, from a corner widget to a wall display</li>
+            <li>Same dockable panel frame as the analog meter</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="media"><div class="ph">Recorder / graph screenshot<small>tmp/screenshots/recorder.png</small></div></div>
+        <div>
+          <h3>Transient recorder</h3>
+          <p>Built on Qt Charts. Record a battery discharge over a weekend or a thermistor over a minute — the sample rate and window length are yours.</p>
+          <ul>
+            <li>Start manually, at a set time, or automatically when a rising/falling threshold is crossed</li>
+            <li>Three draggable threshold lines, cursor crosshair with live readout</li>
+            <li>Integration curve (running sum — Ah, Wh, …)</li>
+            <li>Mouse‑wheel zoom, middle‑button pan</li>
+            <li>CSV export and import with SI prefixes (µ, m, k, M …), printing</li>
+            <li>Run an external command when a threshold is hit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="media"><div class="ph">Settings dialog screenshot<small>tmp/screenshots/settings-dmm.png</small></div></div>
+        <div>
+          <h3>Connection backends</h3>
+          <ul>
+            <li><b>RS‑232 serial</b> — native UART or USB‑serial adapters (PL2303, FTDI, CH340 …)</li>
+            <li><b>USB‑HID cables</b> — HOITEK HE2325U / WCH CH9325 and compatibles as used by UT803, UT61E and others; no driver needed</li>
+            <li><b>RFC2217 remote serial</b> — the meter sits next to the device under test, QtDMM sits on your desk</li>
+            <li><b>sigrok‑cli</b> — use any meter sigrok supports as a data source</li>
+          </ul>
+          <p>Picking a vendor and model fills in baud rate, parity, stop bits and the control lines the cable needs. Unknown meters: choose <em>Manual settings</em> and a protocol.</p>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="media"><div class="ph">Multiple instances screenshot<small>tmp/screenshots/instances.png</small></div></div>
+        <div>
+          <h3>Several meters, one desk</h3>
+          <p>Run one QtDMM per meter. Instances find each other and can be started and stopped together, so voltage and current recordings line up. Computed values across instances (P = U·I) are in development.</p>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="media"><div class="ph">Handbook (F1) screenshot<small>tmp/screenshots/help.png</small></div></div>
+        <div>
+          <h3>Handbook, shortcuts, command line</h3>
+          <p>The manual is embedded in the program (F1) and published at <a href="docs/">qtdmm.de/docs</a>. Command‑line switches let you start connected, pick a port or load a CSV file at launch.</p>
+          <p>Interface languages: English, German; French, Spanish and Polish in progress.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div>© 2001–2016 Matthias Toussaint · © 2016–2026 tuxmaster and contributors · GPL-3.0</div>
+      <nav>
+        <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

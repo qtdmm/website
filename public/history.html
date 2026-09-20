@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>History – QtDMM</title>
+  <meta name="description" content="The history of QtDMM: from Matthias Toussaint's 2001 original through the Qt5 port to today's Qt6 version with analog meter, LCD display and Qt Charts recorder.">
+  <link rel="icon" href="img/qtdmm_128.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt=""><span>Qt<b>DMM</b></span></a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="meters.html">Supported Meters</a>
+        <a href="history.html" class="active">History</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">History</div>
+        <h2>Twenty‑five years of reading meters</h2>
+        <p>QtDMM began as a one‑person project for a Metex meter on a Linux box and has been passed from maintainer to maintainer ever since.</p>
+      </div>
+      <ul class="timeline">
+        <li>
+          <time>2001</time>
+          <h3>First release by Matthias Toussaint</h3>
+          <p>A Qt 2/3 application for Metex and Voltcraft meters with a serial cable: digital readout, a simple analog dial and a hand‑painted transient recorder. Licensed under the GPL v2.</p>
+        </li>
+        <li>
+          <time>2005 – 2009</time>
+          <h3>0.8.x — the community list grows</h3>
+          <p>Users send in protocol captures and QtDMM learns PeakTech, Mastech, McVoice, Radioshack, Digitech and more (see the AUTHORS file). Threshold‑triggered recording, integration curve, external command execution and printing arrive.</p>
+        </li>
+        <li>
+          <time>2014</time>
+          <h3>0.9.0 — Qt 4 and GPL v3</h3>
+          <p>Port to Qt 4, new build system, licence changed to GPL v3.</p>
+        </li>
+        <li>
+          <time>2015 – 2016</time>
+          <h3>0.9.5 – 0.9.7 — tuxmaster takes over</h3>
+          <p>Frank Büttner (tuxmaster) ports QtDMM to Qt 5, fixes translations, logging and CSV export, and becomes the upstream maintainer. Voltcraft VC870 support with apparent‑power and power‑factor symbols.</p>
+        </li>
+        <li class="red">
+          <time>2025 – 2026</time>
+          <h3>1.0 — Qt 6, CMake, new instruments</h3>
+          <p>Complete move to Qt 6 and C++17 with a CMake build; macOS, Windows (installer, USB‑HID) and FreeBSD in CI. New connection backends: USB‑HID cables, RFC2217 remote serial, sigrok. Decoders for Uni‑T UT61E, UT70B, UT71x, UT803/804, PeakTech 3315, DTM0660‑based meters — each verified against recorded protocol logs. Recorder rebuilt on Qt Charts. New analog needle instrument and LCD display panels. Handbook embedded in the program and published as this site's <a href="docs/">documentation</a>.</p>
+        </li>
+        <li>
+          <time>Next</time>
+          <h3>Computed values, more meters</h3>
+          <p>Values calculated across instances (P = U·I), more meters from the sigrok family, and translations. Have a meter that isn't listed? <a href="contact.html">Get in touch.</a></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div>© 2001–2016 Matthias Toussaint · © 2016–2026 tuxmaster and contributors · GPL-3.0</div>
+      <nav>
+        <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
+        <a href="docs/">Handbook</a>
+        <a href="contact.html">Contact</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
