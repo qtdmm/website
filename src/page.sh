@@ -4,7 +4,7 @@
 # pages; the generated files in public/ are committed as-is.
 set -euo pipefail
 out=$1; active=$2; title=$3; desc=$4
-nav() { local key=$1 href=$2 label=$3 cls=""; [ "$key" = "$active" ] && cls=' class="active"'; printf '        <a href="%s"%s>%s</a>\n' "$href" "$cls" "$label"; }
+nav() { local key=$1 href=$2 label=$3 cls=""; [ "$key" = "$active" ] && cls=' class="active"'; [ "$key" = docs ] && cls="$cls"' target="_blank" rel="noopener"'; printf '        <a href="%s"%s>%s</a>\n' "$href" "$cls" "$label"; }
 {
 cat <<HEAD
 <!DOCTYPE html>
