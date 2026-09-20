@@ -34,7 +34,7 @@
       </div>
 
       <div class="feature-row">
-        <div class="media"><img src="img/meter.png" alt="Analog meter panel" width="480" height="270"></div>
+        <div class="media"><img src="img/meter_marks.png" alt="Analog meter panel with min/max marks on the scale" width="480" height="270"></div>
         <div>
           <h3>Analog meter</h3>
           <p>A procedurally drawn needle instrument in the style of a studio VU meter: dark or ivory face, mirrored‑scale ballistics on the needle, a red overrange zone and an OL lamp that lights when the meter reports overload.</p>
@@ -99,7 +99,19 @@
             <li>Operators, parentheses, SI suffixes (<code>1.5k</code>, <code>22u</code>), <code>sqrt</code>, <code>abs</code>, <code>log10</code>, <code>min</code>/<code>max</code> …</li>
             <li>Inputs are combined in base units; the result gets a fitting prefix (12 V × 0.5 mA = 6.00 mW)</li>
             <li>Shows OL and names the missing input when a meter drops out</li>
-            <li><b>Virtual meter</b>: sine, triangle, square, sawtooth, noise or a discharge curve — for demos, tests and as a signal source for formulas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="media"><img src="img/virtual-meter.png" alt="QtDMM main window with the virtual meter: LCD display and analog meter showing 11.4 V, the recorder graph tracing a sine wave" width="1000" height="640"></div>
+        <div>
+          <h3>Virtual meter</h3>
+          <p>No multimeter on the desk? Pick the model <em>QtDMM / Virtual meter</em> and QtDMM generates a signal itself: try the panels, the recorder and thresholds, give a demo, or feed a known signal into a calculation.</p>
+          <ul>
+            <li>Waveforms: constant, random, sine, triangle, square, sawtooth, discharge curve (like a battery under load) — or your own formula</li>
+            <li>Min, max, period and noise amplitude; unit and coupling of your choice</li>
+            <li>Publishes its value like a real meter, so <code>u * i</code> works with a virtual <code>u</code></li>
           </ul>
         </div>
       </div>
