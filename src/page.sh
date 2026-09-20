@@ -44,6 +44,7 @@ cat <<FOOT
       <nav>
         <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
         <a href="docs/" target="_blank" rel="noopener">Handbook</a>
+        <a href="api/" target="_blank" rel="noopener">API</a>
         <a href="contact.html">Contact</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>

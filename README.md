@@ -6,10 +6,11 @@ no framework.
 ```
 public/            the site as served (commit it)
 public/docs/       MkDocs handbook, built from ../rp-master — not committed
+public/api/        Doxygen developer docs (cmake target in ../rp-master/build) — not committed
 src/gen_meters.py  supported-devices.md → public/meters.html
 src/page.sh        wraps a page body in topbar/footer (used when authoring)
 templates/         template for the generated meters page
-build.sh           regenerate meters.html + mkdocs build
+build.sh           regenerate meters.html + mkdocs + doxygen
 deploy.sh          lftp mirror to the host (credentials from ~/.netrc or env)
 ```
 
