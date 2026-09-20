@@ -40,7 +40,7 @@
           <p>A procedurally drawn needle instrument in the style of a studio VU meter: dark or ivory face, mirrored‑scale ballistics on the needle, a red overrange zone and an OL lamp that lights when the meter reports overload.</p>
           <ul>
             <li>Auto‑ranging scale that follows the meter's range and unit</li>
-            <li>Bipolar scale for signed readings, secondary readout for min/max or a second value</li>
+            <li>Bipolar scale for signed readings, min/max marks on the scale, secondary readout</li>
             <li>HOLD indicator, current/max fields</li>
             <li>Dockable panel — stack it, float it, or run it full‑screen on a second display</li>
           </ul>
@@ -93,8 +93,14 @@
       <div class="feature-row">
         <div class="media"><div class="ph">Multiple instances screenshot<small>tmp/screenshots/instances.png</small></div></div>
         <div>
-          <h3>Several meters, one desk</h3>
-          <p>Run one QtDMM per meter. Instances find each other and can be started and stopped together, so voltage and current recordings line up. Computed values across instances (P = U·I) are in development.</p>
+          <h3>Several meters, one desk — and calculated values</h3>
+          <p>Run one QtDMM per meter. Instances find each other and can be started and stopped together, so voltage and current recordings line up. A third instance can <b>calculate</b> from the others: choose the model <em>QtDMM / Calculated value</em>, give it a unit and a formula such as <code>u * i</code>, and it behaves like any meter — display, needle, recorder, export.</p>
+          <ul>
+            <li>Operators, parentheses, SI suffixes (<code>1.5k</code>, <code>22u</code>), <code>sqrt</code>, <code>abs</code>, <code>log10</code>, <code>min</code>/<code>max</code> …</li>
+            <li>Inputs are combined in base units; the result gets a fitting prefix (12 V × 0.5 mA = 6.00 mW)</li>
+            <li>Shows OL and names the missing input when a meter drops out</li>
+            <li><b>Virtual meter</b>: sine, triangle, square, sawtooth, noise or a discharge curve — for demos, tests and as a signal source for formulas</li>
+          </ul>
         </div>
       </div>
 
@@ -103,7 +109,7 @@
         <div>
           <h3>Handbook, shortcuts, command line</h3>
           <p>The manual is embedded in the program (F1) and published at <a href="docs/" target="_blank" rel="noopener">qtdmm.de/docs</a>; developers find the <a href="api/" target="_blank" rel="noopener">API reference</a> at qtdmm.de/api. Command‑line switches let you start connected, pick a port or load a CSV file at launch.</p>
-          <p>Interface languages: English, German; French, Spanish and Polish in progress.</p>
+          <p>Interface languages: English, German, French, Spanish and Polish.</p>
         </div>
       </div>
     </div>
