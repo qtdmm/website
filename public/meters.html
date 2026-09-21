@@ -29,8 +29,8 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Supported meters</div>
-        <h2>123 meters from 30 vendors</h2>
-        <p>Choosing a model in <em>Settings → Multimeter</em> fills in these serial parameters. A meter that is not listed but uses one of the 17 protocols below usually works with <em>Manual settings</em> — the <em>Chip</em> column helps: a meter built around the same chip (named in its manual or on the sigrok wiki) almost always speaks the same protocol. See <a href="docs/user/connecting/" target="_blank" rel="noopener">Connecting a meter</a>.</p>
+        <h2>127 meters from 30 vendors</h2>
+        <p>Choosing a model in <em>Settings → Multimeter</em> fills in these serial parameters. A meter that is not listed but uses one of the 20 protocols below usually works with <em>Manual settings</em> — the <em>Chip</em> column helps: a meter built around the same chip (named in its manual or on the sigrok wiki) almost always speaks the same protocol. See <a href="docs/user/connecting/" target="_blank" rel="noopener">Connecting a meter</a>.</p>
       </div>
       <div class="table-tools">
         <input type="search" id="meter-filter" placeholder="Filter by vendor, model or protocol …" aria-label="Filter meters">
@@ -49,6 +49,10 @@
         <tr data-vendor="Brymen"><td>Brymen</td><td>BM251 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Brymen BM25x</td><td><code>BrymenBM25x</code></td><td>9600 8N1</td><td>DTR RTS</td><td>6000</td></tr>
         <tr data-vendor="Brymen"><td>Brymen</td><td>BM252 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Brymen BM25x</td><td><code>BrymenBM25x</code></td><td>9600 8N1</td><td>DTR RTS</td><td>6000</td></tr>
         <tr data-vendor="Brymen"><td>Brymen</td><td>BM257 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Brymen BM25x</td><td><code>BrymenBM25x</code></td><td>9600 8N1</td><td>DTR RTS</td><td>6000</td></tr>
+        <tr data-vendor="Brymen"><td>Brymen</td><td>BM525s <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Brymen BM52x (BU-86X)</td><td><code>BrymenBM52x</code></td><td>0 8N1</td><td>-</td><td>6000</td></tr>
+        <tr data-vendor="Brymen"><td>Brymen</td><td>BM829s <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Brymen BM82x (BU-86X)</td><td><code>BrymenBM82x</code></td><td>0 8N1</td><td>-</td><td>6000</td></tr>
+        <tr data-vendor="Brymen"><td>Brymen</td><td>BM867s <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Brymen BM86x (BU-86X)</td><td><code>BrymenBM86x</code></td><td>0 8N1</td><td>-</td><td>50000</td></tr>
+        <tr data-vendor="Brymen"><td>Brymen</td><td>BM869s <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Brymen BM86x (BU-86X)</td><td><code>BrymenBM86x</code></td><td>0 8N1</td><td>-</td><td>50000</td></tr>
         <tr data-vendor="Digitech"><td>Digitech</td><td>QM1350</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Digitech"><td>Digitech</td><td>QM1462</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Digitech"><td>Digitech</td><td>QM1537</td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
@@ -169,7 +173,7 @@
           </tbody>
         </table>
       </div>
-      <p class="count-note" style="margin-top:14px"><em>Serial</em> is baud rate, data bits, parity and stop bits. <em>Lines</em> are the control lines the cable needs driven. <em>Counts</em> is the display resolution. Not every entry has been confirmed on hardware recently; the 40 models marked <sup>?</sup> were added from chip data (libsigrok, ultradmm.com) and have not been tried with QtDMM at all. If you can confirm one, or get an unlisted meter working, please <a href="contact.html">tell us</a>. This list is generated from the decoder registrations in the source code.</p>
+      <p class="count-note" style="margin-top:14px"><em>Serial</em> is baud rate, data bits, parity and stop bits. <em>Lines</em> are the control lines the cable needs driven. <em>Counts</em> is the display resolution. Not every entry has been confirmed on hardware recently; the 44 models marked <sup>?</sup> were added from chip data (libsigrok, ultradmm.com) and have not been tried with QtDMM at all. If you can confirm one, or get an unlisted meter working, please <a href="contact.html">tell us</a>. This list is generated from the decoder registrations in the source code.</p>
     </div>
   </section>
   <script src="js/meters.js"></script>
