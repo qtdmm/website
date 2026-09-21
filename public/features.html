@@ -107,7 +107,8 @@
         <div class="media"><img src="img/virtual-meter.png" alt="QtDMM main window with the virtual meter: LCD display and analog meter showing 11.4 V, the recorder graph tracing a sine wave" width="1000" height="640"></div>
         <div>
           <h3>Virtual meter</h3>
-          <p>No multimeter on the desk? Pick the model <em>QtDMM / Virtual meter</em> and QtDMM generates a signal itself: try the panels, the recorder and thresholds, give a demo, or feed a known signal into a calculation.</p>
+          <p>Pick the model <em>QtDMM / Virtual meter</em> and QtDMM generates a value itself. Two things it is good for: <b>testing</b> — try the panels, the recorder and thresholds, or give a demo without any hardware — and <b>standing in for a meter you don't have</b>.</p>
+          <p>Typical case: a bench supply with its own voltage readout and one real DMM measuring the current. For power you would need a second meter — instead, set a virtual meter to the supply's fixed voltage and let a calculated instance multiply it with the live current. Not lab‑grade, but as long as the supply is regulated and not at its limits it is all you need. The same trick supplies a constant for temperature compensation, a probe factor, or a simulated sine for trying out a formula.</p>
           <ul>
             <li>Waveforms: constant, random, sine, triangle, square, sawtooth, discharge curve (like a battery under load) — or your own formula</li>
             <li>Min, max, period and noise amplitude; unit and coupling of your choice</li>
