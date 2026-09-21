@@ -3,13 +3,18 @@
 # Result is a complete static site in public/.
 set -euo pipefail
 cd "$(dirname "$0")"
-RP=${RP_MASTER:-../rp-master}
+RP=${RP_MASTER:-../rp-master}   # a checkout of rp-master master, e.g. a worktree
 
 python3 src/gen_meters.py "$RP/docs/user/supported-devices.md"
 
 rm -rf public/docs
-# src/mkdocs-site.yml inherits $RP/mkdocs.yml (path is relative to that file)
-mkdocs build --quiet -f src/mkdocs-site.yml -d "$PWD/public/docs"
+# src/mkdocs-site.yml is a template: its INHERIT/docs_dir point at $RP.
+# mkdocs resolves those paths relative to the config file, so write the
+# filled-in copy next to it.
+RPABS=$(cd "$RP" && pwd)
+sed "s|@RP@|$RPABS|g" src/mkdocs-site.yml > src/.mkdocs-site.generated.yml
+mkdocs build --quiet -f src/.mkdocs-site.generated.yml -d "$PWD/public/docs"
+rm -f src/.mkdocs-site.generated.yml
 echo "public/docs: $(find public/docs -name '*.html' | wc -l) pages"
 
 # Developer (API) documentation from Doxygen, built via the project's cmake

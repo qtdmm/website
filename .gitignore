@@ -4,3 +4,4 @@ public/api/
 # never credentials
 .netrc
 .env
+.mkdocs-site.generated.yml

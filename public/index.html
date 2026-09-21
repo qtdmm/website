@@ -73,7 +73,7 @@
         <div class="card">
           <div class="icon">⇄</div>
           <h3>Any cable, any port</h3>
-          <p>RS‑232 and USB‑serial, USB‑HID cables (Uni‑Trend UT‑D04/D09, Brymen BU‑86X), RFC2217 remote serial over the network, or sigrok‑cli as a backend.</p>
+          <p>RS‑232 and USB‑serial, USB‑HID cables (Uni‑Trend UT‑D04/D09, Brymen BU‑86X), RFC2217 over the network — with <b>qtdmm‑bridge</b> on a Raspberry Pi — or sigrok‑cli as a backend.</p>
         </div>
         <div class="card">
           <div class="icon">⧉</div>
@@ -91,13 +91,45 @@
 
   <section class="alt">
     <div class="wrap">
+      <div class="feature-row" style="padding-top:0">
+        <div>
+          <div class="eyebrow">qtdmm‑bridge</div>
+          <h2>Meters in the lab, QtDMM on your desk</h2>
+          <p class="muted">A Raspberry Pi or any old box next to the bench runs <b>qtdmm‑bridge</b> — one Python file, pyserial its only dependency — and serves each meter on a TCP port. QtDMM connects over RFC 2217 and sends baud rate, parity and DTR/RTS itself, so the bridge knows nothing about meters: every model QtDMM supports works through it unchanged.</p>
+          <ul>
+            <li>One TCP port per meter, stable <code>by‑id</code> device names, reconnect after re‑plugging</li>
+            <li>Serial cables and USB‑HID cables (UT‑D04, UT‑D09, Brymen BU‑86X) alike</li>
+            <li>Command line or TOML config; runs as a service</li>
+            <li>No authentication — keep it on a trusted LAN or behind an SSH tunnel</li>
+          </ul>
+          <p><a href="docs/user/connecting/" target="_blank" rel="noopener">Setup in the handbook →</a> &nbsp;·&nbsp; <a href="https://github.com/tuxmaster/QtDMM/tree/master/tools/qtdmm-bridge">README on GitHub →</a></p>
+        </div>
+        <div class="media">
+<pre><code># on the Pi
+$ ./qtdmm_bridge.py --list
+/dev/serial/by-id/usb-Prolific_..._USB-Serial_Controller-if00-port0
+hid:1a86:e008  /dev/hidraw2  (CH9325 / UT-D04)
+
+$ ./qtdmm_bridge.py --port 4000=/dev/ttyUSB0 \
+                    --port 4001=hid:1a86:e008
+
+# in QtDMM: Settings → Special ports
+#   type RFC2217, address raspberry:4000
+#   then pick the meter model as usual</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Supported meters</div>
         <h2>A hundred meters, one program</h2>
         <p>Every model is selected from a vendor/model list that fills in the serial settings for you. Unknown meters that speak a known protocol work with manual settings.</p>
       </div>
       <div class="stat-row">
-        <div><span class="stat">100+</span><small>meter models</small></div>
+        <div><span class="stat">120+</span><small>meter models</small></div>
         <div><span class="stat">20</span><small>wire protocols</small></div>
         <div><span class="stat">4</span><small>connection backends</small></div>
         <div><span class="stat">5</span><small>languages</small></div>
