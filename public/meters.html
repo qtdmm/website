@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Supported meters – QtDMM</title>
-  <meta name="description" content="All digital multimeters supported by QtDMM with protocol and serial settings: Uni-T, Voltcraft, Metex, Mastech, PeakTech, Tenma and more.">
+  <meta name="description" content="All digital multimeters supported by QtDMM with protocol and serial settings: Uni-T, Fluke, Voltcraft, Metex, Mastech, PeakTech, Tenma and more.">
   <link rel="icon" href="img/qtdmm_128.png" type="image/png">
   <link rel="stylesheet" href="css/site.css">
 </head>
@@ -29,12 +29,12 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Supported meters</div>
-        <h2>127 meters from 30 vendors</h2>
-        <p>Choosing a model in <em>Settings → Multimeter</em> fills in these serial parameters. A meter that is not listed but uses one of the 20 protocols below usually works with <em>Manual settings</em> — the <em>Chip</em> column helps: a meter built around the same chip (named in its manual or on the sigrok wiki) almost always speaks the same protocol. See <a href="docs/user/connecting/" target="_blank" rel="noopener">Connecting a meter</a>.</p>
+        <h2>134 meters from 31 vendors</h2>
+        <p>Choosing a model in <em>Settings → Multimeter</em> fills in these serial parameters. A meter that is not listed but uses one of the 22 protocols below usually works with <em>Manual settings</em> — the <em>Chip</em> column helps: a meter built around the same chip (named in its manual or on the sigrok wiki) almost always speaks the same protocol. See <a href="docs/user/connecting/" target="_blank" rel="noopener">Connecting a meter</a>.</p>
       </div>
       <div class="table-tools">
         <input type="search" id="meter-filter" placeholder="Filter by vendor, model or protocol …" aria-label="Filter meters">
-        <select id="vendor-filter" aria-label="Vendor"><option value="">All vendors</option><option value="APPA">APPA</option><option value="Brymen">Brymen</option><option value="Digitech">Digitech</option><option value="Digitek">Digitek</option><option value="Duratool">Duratool</option><option value="ELV">ELV</option><option value="Generic">Generic</option><option value="GW Instek">GW Instek</option><option value="HoldPeak">HoldPeak</option><option value="Iso-Tech">Iso-Tech</option><option value="MASTECH">MASTECH</option><option value="McVoice">McVoice</option><option value="Metex">Metex</option><option value="Metrel">Metrel</option><option value="PCE">PCE</option><option value="PeakTech">PeakTech</option><option value="Pro'sKit">Pro'sKit</option><option value="Protek">Protek</option><option value="Radioshack">Radioshack</option><option value="Sinometer">Sinometer</option><option value="SparkFun">SparkFun</option><option value="Tecpel">Tecpel</option><option value="TekPower">TekPower</option><option value="Tenma">Tenma</option><option value="Uni-Trend">Uni-Trend</option><option value="V&amp;A">V&amp;A</option><option value="Velleman">Velleman</option><option value="Vichy">Vichy</option><option value="Voltcraft">Voltcraft</option><option value="Wintex">Wintex</option></select>
+        <select id="vendor-filter" aria-label="Vendor"><option value="">All vendors</option><option value="APPA">APPA</option><option value="Brymen">Brymen</option><option value="Digitech">Digitech</option><option value="Digitek">Digitek</option><option value="Duratool">Duratool</option><option value="ELV">ELV</option><option value="Fluke">Fluke</option><option value="Generic">Generic</option><option value="GW Instek">GW Instek</option><option value="HoldPeak">HoldPeak</option><option value="Iso-Tech">Iso-Tech</option><option value="MASTECH">MASTECH</option><option value="McVoice">McVoice</option><option value="Metex">Metex</option><option value="Metrel">Metrel</option><option value="PCE">PCE</option><option value="PeakTech">PeakTech</option><option value="Pro'sKit">Pro'sKit</option><option value="Protek">Protek</option><option value="Radioshack">Radioshack</option><option value="Sinometer">Sinometer</option><option value="SparkFun">SparkFun</option><option value="Tecpel">Tecpel</option><option value="TekPower">TekPower</option><option value="Tenma">Tenma</option><option value="Uni-Trend">Uni-Trend</option><option value="V&amp;A">V&amp;A</option><option value="Velleman">Velleman</option><option value="Vichy">Vichy</option><option value="Voltcraft">Voltcraft</option><option value="Wintex">Wintex</option></select>
         <span class="count-note" id="meter-count"></span>
       </div>
       <div class="table-wrap">
@@ -63,6 +63,13 @@
         <tr data-vendor="Digitek"><td>Digitek</td><td>INO2513</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Duratool"><td>Duratool</td><td>DO3122</td><td>-</td><td><code>DO3122Continuous</code></td><td>9600 8N1</td><td>-</td><td>4000</td></tr>
         <tr data-vendor="ELV"><td>ELV</td><td>M9803R</td><td>-</td><td><code>M9803RContinuous</code></td><td>9600 7E1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Fluke"><td>Fluke</td><td>187 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>FlukeQM</code></td><td>9600 8N1</td><td>-</td><td>50000</td></tr>
+        <tr data-vendor="Fluke"><td>Fluke</td><td>189 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>FlukeQM</code></td><td>9600 8N1</td><td>-</td><td>50000</td></tr>
+        <tr data-vendor="Fluke"><td>Fluke</td><td>287 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>FlukeQM</code></td><td>115200 8N1</td><td>-</td><td>50000</td></tr>
+        <tr data-vendor="Fluke"><td>Fluke</td><td>289 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>FlukeQM</code></td><td>115200 8N1</td><td>-</td><td>50000</td></tr>
+        <tr data-vendor="Fluke"><td>Fluke</td><td>45 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>Fluke45</code></td><td>9600 8N1</td><td>-</td><td>100000</td></tr>
+        <tr data-vendor="Fluke"><td>Fluke</td><td>87-IV <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>FlukeQM</code></td><td>9600 8N1</td><td>-</td><td>20000</td></tr>
+        <tr data-vendor="Fluke"><td>Fluke</td><td>89-IV <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>FlukeQM</code></td><td>9600 8N1</td><td>-</td><td>50000</td></tr>
         <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 4000 count</td><td>DTM0660</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 6000 count</td><td>DTM0660</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
         <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 8000 count</td><td>DTM0660</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>8000</td></tr>
@@ -173,7 +180,7 @@
           </tbody>
         </table>
       </div>
-      <p class="count-note" style="margin-top:14px"><em>Serial</em> is baud rate, data bits, parity and stop bits. <em>Lines</em> are the control lines the cable needs driven. <em>Counts</em> is the display resolution. Not every entry has been confirmed on hardware recently; the 44 models marked <sup>?</sup> were added from chip data (libsigrok, ultradmm.com) and have not been tried with QtDMM at all. If you can confirm one, or get an unlisted meter working, please <a href="contact.html">tell us</a>. This list is generated from the decoder registrations in the source code.</p>
+      <p class="count-note" style="margin-top:14px"><em>Serial</em> is baud rate, data bits, parity and stop bits. <em>Lines</em> are the control lines the cable needs driven. <em>Counts</em> is the display resolution. Not every entry has been confirmed on hardware recently; the 51 models marked <sup>?</sup> were added from chip data (libsigrok, ultradmm.com) and have not been tried with QtDMM at all. If you can confirm one, or get an unlisted meter working, please <a href="contact.html">tell us</a>. This list is generated from the decoder registrations in the source code.</p>
     </div>
   </section>
   <script src="js/meters.js"></script>
