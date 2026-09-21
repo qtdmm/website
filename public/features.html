@@ -77,6 +77,20 @@
       </div>
 
       <div class="feature-row flip">
+        <div class="media"><img src="img/readings-table.png" alt="QtDMM main window with the readings table below the recorder: one row per reading with time, value, unit, mode, range and a statistics line" width="960" height="860"></div>
+        <div>
+          <h3>Readings table</h3>
+          <p>A third dockable panel (Ctrl+4) lists every reading the meter sends, one row each: time to the millisecond, value as displayed, unit, mode, range, HOLD. Where the recorder samples on a fixed grid, this is the raw protocol of the session.</p>
+          <ul>
+            <li>Follows the newest reading; pauses while you scroll back, or with the pause button</li>
+            <li>Statistics line: count, min, max, mean, span</li>
+            <li>Ctrl+C copies selected rows tab‑separated straight into a spreadsheet</li>
+            <li>CSV export (<code>timestamp;value;unit;mode;range;hold</code>), keeps the newest 10 000 rows by default</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row">
         <div class="media"><img src="img/settings-dmm.png" alt="Settings dialog, DMM page: vendor Uni-Trend, model UT61E selected, serial parameters filled in" width="800" height="814"></div>
         <div>
           <h3>Connection backends</h3>
