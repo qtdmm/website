@@ -136,7 +136,9 @@ section:not(.alt) .card { background: var(--bezel-2); }
 
 /* meter strip */
 .vendor-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
-.vendor-cloud span { background: var(--bezel-3); border: 1px solid var(--chrome); padding: 4px 12px; border-radius: 999px; font-size: .9rem; }
+.vendor-cloud a { color: var(--dial); }
+.vendor-cloud a:hover { border-color: var(--lcd); color: var(--lcd); text-decoration: none; }
+.vendor-cloud span, .vendor-cloud a { background: var(--bezel-3); border: 1px solid var(--chrome); padding: 4px 12px; border-radius: 999px; font-size: .9rem; }
 .stat { font-size: 3rem; font-weight: 700; color: var(--lcd); line-height: 1; font-family: var(--mono); }
 .stat-row { display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 28px; }
 .stat-row div small { display: block; color: var(--dial-dim); margin-top: 6px; }

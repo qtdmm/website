@@ -17,6 +17,11 @@
     });
     count.textContent = shown + ' of ' + rows.length;
   }
+  // ?vendor=Fluke (from the vendor cloud on the home page) preselects a vendor
+  var want = new URLSearchParams(location.search).get('vendor');
+  if (want) {
+    for (var i = 0; i < v.options.length; i++) if (v.options[i].value === want) { v.value = want; break; }
+  }
   q.addEventListener('input', apply);
   v.addEventListener('change', apply);
   apply();
