@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
-# page.sh <out.html> <active-nav-key> <title> <description>  — body from stdin.
-# Wraps a page body in the shared topbar/footer. Used once when authoring the
-# pages; the generated files in public/ are committed as-is.
+# page.sh <body.html> <out.html> — wraps a page body in the shared topbar and
+# footer. The body's first line names the page:
+#   <!-- page: <nav-key> | <title> | <description> -->
+# Optional environment (set by build.sh from gen_news.py):
+#   NEWS=1        add the "News" entry to topbar and footer and the RSS link
+#   LATEST_NEWS   file whose content replaces @LATEST_NEWS@ (home teaser)
 set -euo pipefail
-out=$1; active=$2; title=$3; desc=$4
-nav() { local key=$1 href=$2 label=$3 cls=""; [ "$key" = "$active" ] && cls=' class="active"'; [ "$key" = docs ] && cls="$cls"' target="_blank" rel="noopener"'; printf '        <a href="%s"%s>%s</a>\n' "$href" "$cls" "$label"; }
+body=$1; out=$2
+IFS='|' read -r active title desc < <(head -1 "$body" | sed -E 's/^<!-- page: *(.*) -->$/\1/; s/ *\| */|/g')
+nav() { local key=$1 href=$2 label=$3 cls=""; [ "$key" = "$active" ] && cls=' class="active"'; [ "$key" = docs ] || [ "$key" = api ] && cls="$cls"' target="_blank" rel="noopener"'; printf '        <a href="%s"%s>%s</a>\n' "$href" "$cls" "$label"; }
 {
 cat <<HEAD
 <!DOCTYPE html>
@@ -16,6 +20,9 @@ cat <<HEAD
   <meta name="description" content="${desc}">
   <link rel="icon" href="img/qtdmm_128.png" type="image/png">
   <link rel="stylesheet" href="css/site.css">
+HEAD
+[ "${NEWS:-0}" = 1 ] && printf '  <link rel="alternate" type="application/rss+xml" title="QtDMM news" href="feed.xml">\n'
+cat <<HEAD
 </head>
 <body>
   <header class="topbar">
@@ -27,8 +34,10 @@ HEAD
 nav home index.html Home
 nav features features.html Features
 nav meters meters.html "Supported Meters"
+[ "${NEWS:-0}" = 1 ] && nav news news.html News
 nav history history.html History
 nav docs docs/ Handbook
+nav api api/ API
 nav contact contact.html Contact
 printf '        <a class="cta" href="download.html">Download</a>\n'
 cat <<HEAD
@@ -36,7 +45,11 @@ cat <<HEAD
     </div>
   </header>
 HEAD
-cat
+if [ -n "${LATEST_NEWS:-}" ] && [ -s "$LATEST_NEWS" ]; then
+  tail -n +2 "$body" | python3 -c 'import sys; sys.stdout.write(sys.stdin.read().replace("@LATEST_NEWS@\n", open(sys.argv[1]).read()))' "$LATEST_NEWS"
+else
+  tail -n +2 "$body" | grep -v '^@LATEST_NEWS@$' || true
+fi
 cat <<FOOT
   <footer>
     <div class="wrap">
@@ -45,6 +58,9 @@ cat <<FOOT
         <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
         <a href="docs/" target="_blank" rel="noopener">Handbook</a>
         <a href="api/" target="_blank" rel="noopener">API</a>
+FOOT
+[ "${NEWS:-0}" = 1 ] && printf '        <a href="news.html">News</a>\n        <a href="feed.xml">RSS</a>\n'
+cat <<FOOT
         <a href="contact.html">Contact</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>

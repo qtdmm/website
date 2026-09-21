@@ -1,0 +1,14 @@
+---
+title: QtDMM 1.0 released
+date: 2026-09-25
+link: https://github.com/tuxmaster/QtDMM/releases/tag/v1.0.0
+---
+The first release of the Qt 6 line. Highlights:
+
+- Analog needle instrument and LCD display panel
+- Recorder on Qt Charts with thresholds, integration curve, CSV export
+- Calculated values across instances and a built-in virtual meter
+- qtdmm-bridge: meters on a Raspberry Pi, QtDMM at the desk
+- 127 supported meters, USB-HID cables, Windows installer
+
+Download for Windows or build from source — see the [download page](download.html).

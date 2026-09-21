@@ -1,0 +1,47 @@
+<!-- page: download | Download | Download QtDMM for Windows, or build from source on Linux, macOS and FreeBSD. Free software, GPL-3.0. -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Download</div>
+        <h2>Get QtDMM</h2>
+        <p>Releases are published on GitHub. QtDMM is free software under the GNU GPL v3.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card dl-card win">
+          <h3>Windows</h3>
+          <p>Installer (Inno Setup) and a portable ZIP, 64‑bit. Windows 10 or later. USB‑HID cables work without extra drivers; USB‑serial adapters need the vendor's driver.</p>
+          <a class="btn btn-primary" href="https://github.com/tuxmaster/QtDMM/releases/latest">Latest release →</a>
+        </div>
+        <div class="card dl-card">
+          <h3>Linux · macOS · FreeBSD</h3>
+          <p>Build from source with CMake and Qt 6 — see below. A <code>.deb</code> and an Arch <code>PKGBUILD</code> are produced by the build script; distribution packages are welcome.</p>
+          <a class="btn btn-outline" href="https://github.com/tuxmaster/QtDMM/releases/latest">Source tarball →</a>
+        </div>
+        <div class="card dl-card src">
+          <h3>Source code</h3>
+          <p>Development happens on GitHub. Issues, pull requests and reports of meters that work (or don't) are welcome.</p>
+          <a class="btn btn-red" href="https://github.com/tuxmaster/QtDMM">github.com/tuxmaster/QtDMM →</a>
+        </div>
+      </div>
+
+      <p class="notice" style="margin-top:32px">The GitHub release page may lag behind the current code. The Windows installer for the latest commit is attached to the <a href="https://github.com/tuxmaster/QtDMM/actions">CI workflow run</a> as a build artifact.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap prose">
+      <h2>Building from source</h2>
+      <p>Requirements: a C++17 compiler, CMake ≥ 3.16, Qt 6 with the SerialPort and Charts modules, and <code>hidapi</code> for USB‑HID cables (fetched automatically if not installed).</p>
+<pre><code>git clone https://github.com/tuxmaster/QtDMM.git
+cd QtDMM
+./compile.sh          # configure + build into build/
+./compile.sh run      # build and start
+./compile.sh pack     # .deb + source tarball</code></pre>
+      <p><b>Debian/Ubuntu:</b> <code>sudo apt install build-essential cmake qt6-base-dev qt6-serialport-dev qt6-charts-dev libhidapi-dev</code></p>
+      <p><b>Arch:</b> <code>sudo pacman -S cmake qt6-base qt6-serialport qt6-charts hidapi</code> — or use the <code>PKGBUILD</code> in the repository.</p>
+      <p><b>macOS:</b> <code>brew install cmake qt hidapi</code>, then the same steps.</p>
+      <p><b>FreeBSD:</b> <code>pkg install cmake qt6-base qt6-serialport qt6-charts hidapi</code>.</p>
+      <h2>Serial port permissions</h2>
+      <p>On Linux, add yourself to the group that owns the port — <code>dialout</code> on Debian/Ubuntu/Fedora, <code>uucp</code> on Arch — and log in again. QtDMM tells you which group it needs if a port cannot be opened. Details are in the <a href="docs/user/troubleshooting/" target="_blank" rel="noopener">troubleshooting page</a>.</p>
+    </div>
+  </section>

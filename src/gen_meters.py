@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate public/meters.html from rp-master/docs/user/supported-devices.md.
+"""Generate the Supported-meters page body from rp-master/docs/user/supported-devices.md.
 
 The Markdown table there is itself generated from the decoder registrations,
 so this is the only place on the website that needs to follow the code.
@@ -11,8 +11,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 SRC = ROOT.parent / "rp-master" / "docs" / "user" / "supported-devices.md"
-TEMPLATE = ROOT / "templates" / "meters.html.in"
-OUT = ROOT / "public" / "meters.html"
+TEMPLATE = ROOT / "templates" / "pages" / "meters.html"
+OUT = ROOT / "src" / ".gen" / "meters.html"   # page body; page.sh wraps it
 
 
 def esc(s: str) -> str:
@@ -75,6 +75,7 @@ def main():
                 .replace("@N_VENDORS@", str(len(vendors)))
                 .replace("@N_PROTOS@", str(len(protos)))
                 .replace("@N_UNCONFIRMED@", str(sum(r["unconfirmed"] for r in rows))))
+    OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
     print(f"{OUT.relative_to(ROOT)}: {len(rows)} meters, {len(vendors)} vendors, {len(protos)} protocols")
 

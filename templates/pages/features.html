@@ -1,0 +1,103 @@
+<!-- page: features | Features | QtDMM features: analog meter, LCD display, transient recorder with thresholds and CSV export, serial/HID/RFC2217/sigrok backends, multiple instances. -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Features</div>
+        <h2>What QtDMM does</h2>
+        <p>A readout that looks like an instrument, a recorder that behaves like a chart recorder — and a device list that saves you from guessing baud rates.</p>
+      </div>
+
+      <div class="feature-row">
+        <div class="media"><img src="img/meter_marks.png" alt="Analog meter panel with min/max marks on the scale" width="480" height="270"></div>
+        <div>
+          <h3>Analog meter</h3>
+          <p>A procedurally drawn needle instrument in the style of a studio VU meter: dark or ivory face, mirrored‑scale ballistics on the needle, a red overrange zone and an OL lamp that lights when the meter reports overload.</p>
+          <ul>
+            <li>Auto‑ranging scale that follows the meter's range and unit</li>
+            <li>Bipolar scale for signed readings, min/max marks on the scale, secondary readout</li>
+            <li>HOLD indicator, current/max fields</li>
+            <li>Dockable panel — stack it, float it, or run it full‑screen on a second display</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="media"><img src="img/display_diode.png" alt="LCD display panel in diode test mode" width="520" height="200"></div>
+        <div>
+          <h3>LCD display</h3>
+          <p>Seven‑segment digits on a warm LCD‑green face with ghost segments, a 40‑segment bargraph and the annunciators you know from the meter itself: HOLD, AUTO/MANU, AC/DC, diode, continuity, REL.</p>
+          <ul>
+            <li>Main value plus MIN and MAX lines</li>
+            <li>Scales with the window, from a corner widget to a wall display</li>
+            <li>Same dockable panel frame as the analog meter</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="media"><img src="img/recorder.png" alt="Transient recorder graph: a 12 V supply recorded over five minutes with two dropouts" width="1100" height="520"></div>
+        <div>
+          <h3>Transient recorder</h3>
+          <p>Built on Qt Charts. Record a battery discharge over a weekend or a thermistor over a minute — the sample rate and window length are yours.</p>
+          <ul>
+            <li>Start manually, at a set time, or automatically when a rising/falling threshold is crossed</li>
+            <li>Three draggable threshold lines, cursor crosshair with live readout</li>
+            <li>Integration curve (running sum — Ah, Wh, …)</li>
+            <li>Mouse‑wheel zoom, middle‑button pan</li>
+            <li>CSV export and import with SI prefixes (µ, m, k, M …), printing</li>
+            <li>Run an external command when a threshold is hit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="media"><img src="img/settings-dmm.png" alt="Settings dialog, DMM page: vendor Uni-Trend, model UT61E selected, serial parameters filled in" width="800" height="814"></div>
+        <div>
+          <h3>Connection backends</h3>
+          <ul>
+            <li><b>RS‑232 serial</b> — native UART or USB‑serial adapters (PL2303, FTDI, CH340 …)</li>
+            <li><b>USB‑HID cables</b> — Uni‑Trend UT‑D04 (HE2325U / CH9325) and UT‑D09 (CP2110 / CH9329), Brymen BU‑86X for the BM52x/BM82x/BM86x; no driver needed</li>
+            <li><b>RFC2217 remote serial</b> — the meter sits next to the device under test, QtDMM sits on your desk. <b>qtdmm‑bridge</b>, a single Python file shipped with QtDMM, serves serial and USB‑HID meters from a Raspberry Pi; QtDMM sends the line settings itself, so any supported meter works through it. Runs as a systemd service, announces itself via mDNS. Details in the <a href="docs/user/remote-bridge/" target="_blank" rel="noopener">handbook</a>.</li>
+            <li><b>sigrok‑cli</b> — use any meter sigrok supports as a data source</li>
+          </ul>
+          <p>Picking a vendor and model fills in baud rate, parity, stop bits and the control lines the cable needs. Unknown meters: choose <em>Manual settings</em> and a protocol.</p>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="media"><div class="ph">Multiple instances screenshot<small>tmp/screenshots/instances.png</small></div></div>
+        <div>
+          <h3>Several meters, one desk — and calculated values</h3>
+          <p>Run one QtDMM per meter. Instances find each other and can be started and stopped together, so voltage and current recordings line up. A third instance can <b>calculate</b> from the others: choose the model <em>QtDMM / Calculated value</em>, give it a unit and a formula such as <code>u * i</code>, and it behaves like any meter — display, needle, recorder, export.</p>
+          <ul>
+            <li>Operators, parentheses, SI suffixes (<code>1.5k</code>, <code>22u</code>), <code>sqrt</code>, <code>abs</code>, <code>log10</code>, <code>min</code>/<code>max</code> …</li>
+            <li>Inputs are combined in base units; the result gets a fitting prefix (12 V × 0.5 mA = 6.00 mW)</li>
+            <li>Shows OL and names the missing input when a meter drops out</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="media"><img src="img/virtual-meter.png" alt="QtDMM main window with the virtual meter: LCD display and analog meter showing 11.4 V, the recorder graph tracing a sine wave" width="1000" height="640"></div>
+        <div>
+          <h3>Virtual meter</h3>
+          <p>Pick the model <em>QtDMM / Virtual meter</em> and QtDMM generates a value itself. Two things it is good for: <b>testing</b> — try the panels, the recorder and thresholds, or give a demo without any hardware — and <b>standing in for a meter you don't have</b>.</p>
+          <p>Typical case: a bench supply with its own voltage readout and one real DMM measuring the current. For power you would need a second meter — instead, set a virtual meter to the supply's fixed voltage and let a calculated instance multiply it with the live current. Not lab‑grade, but as long as the supply is regulated and not at its limits it is all you need. The same trick supplies a constant for temperature compensation, a probe factor, or a simulated sine for trying out a formula.</p>
+          <ul>
+            <li>Waveforms: constant, random, sine, triangle, square, sawtooth, discharge curve (like a battery under load) — or your own formula</li>
+            <li>Min, max, period and noise amplitude; unit and coupling of your choice</li>
+            <li>Publishes its value like a real meter, so <code>u * i</code> works with a virtual <code>u</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="media"><img src="img/help.png" alt="Built-in handbook window showing the Connecting a meter page" width="1130" height="880"></div>
+        <div>
+          <h3>Handbook, shortcuts, command line</h3>
+          <p>The manual is embedded in the program (F1, searchable with Ctrl+F) and published at <a href="docs/" target="_blank" rel="noopener">qtdmm.de/docs</a>; developers find the <a href="api/" target="_blank" rel="noopener">API reference</a> at qtdmm.de/api. Every action has a keyboard shortcut, shown in its tooltip: Space starts and stops the recorder, Ctrl+Del clears it, F11 goes full screen — the <a href="docs/user/keyboard/" target="_blank" rel="noopener">complete list</a> is grouped by window.</p>
+          <p>Interface languages: English, German, French, Spanish and Polish.</p>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -203,3 +203,21 @@ footer a:hover { color: var(--lcd); }
 
 /* Impressum: address rendered as an image */
 .contact-img { max-width: 420px; width: 100%; border-radius: 8px; background: #fff; }
+
+/* news */
+.news-strip { background: var(--bezel-2); border-bottom: 1px solid var(--chrome); padding: 10px 0; font-size: .95rem; }
+.news-strip .wrap { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.news-strip time { font-family: var(--mono); color: var(--dial-dim); font-size: .85rem; }
+.news-strip a { color: var(--lcd); font-weight: 600; }
+.badge { background: var(--red); color: #fff; font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.news-list { max-width: 46em; }
+.news-entry { padding: 28px 0; border-bottom: 1px solid var(--chrome); }
+.news-entry:last-child { border-bottom: 0; }
+.news-entry time { font-family: var(--mono); color: var(--dial-dim); font-size: .85rem; }
+.news-entry h3 { margin: 4px 0 10px; font-size: 1.4rem; }
+.news-entry h3 a { color: var(--dial); }
+.news-entry h3 a:hover { color: var(--lcd); text-decoration: none; }
+.news-body { color: var(--dial-dim); }
+.news-body ul { padding-left: 1.2em; }
+.news-body li { margin-bottom: .3em; }
+.news-link { display: inline-block; margin-top: 6px; font-weight: 600; }

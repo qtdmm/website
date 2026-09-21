@@ -13,7 +13,19 @@ fi
 git -C "$RP" checkout -q master && git -C "$RP" pull -q --ff-only
 [ -d "$RP/build" ] || cmake -S "$RP" -B "$RP/build" -DCMAKE_BUILD_TYPE=Release >/dev/null
 
+# Page bodies live in templates/pages/; the generated ones (meters, news)
+# land in src/.gen/. page.sh wraps each in topbar/footer.
+rm -rf src/.gen && mkdir -p src/.gen
 python3 src/gen_meters.py "$RP/docs/user/supported-devices.md"
+python3 src/gen_news.py
+NEWS=$(cat src/.gen/news.flag)
+export NEWS LATEST_NEWS=src/.gen/latest.html
+for body in templates/pages/*.html src/.gen/meters.html src/.gen/news.html; do
+  [ -f "$body" ] || continue
+  name=$(basename "$body")
+  [ "$name" = meters.html ] && [ "$body" != src/.gen/meters.html ] && continue   # the template, not the page
+  src/page.sh "$body" "public/$name"
+done
 
 rm -rf public/docs
 # src/mkdocs-site.yml is a template: its INHERIT/docs_dir point at $RP.

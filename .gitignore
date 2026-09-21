@@ -7,3 +7,4 @@ qtdmm-src/
 .netrc
 .env
 .mkdocs-site.generated.yml
+src/.gen/
