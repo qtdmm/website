@@ -3,7 +3,15 @@
 # Result is a complete static site in public/.
 set -euo pipefail
 cd "$(dirname "$0")"
-RP=${RP_MASTER:-../rp-master}   # a checkout of rp-master master, e.g. a worktree
+# Source checkout the site is built from: our own clone of QtDMM on master,
+# never Sarah's working copy in ../rp-master (that one is usually on a
+# feature branch). Cloned on first use, pulled on every build.
+RP=${RP_MASTER:-qtdmm-src}
+if [ ! -d "$RP/.git" ]; then
+  git clone -q git@github.com:redPanther/QtDMM.git "$RP"
+fi
+git -C "$RP" checkout -q master && git -C "$RP" pull -q --ff-only
+[ -d "$RP/build" ] || cmake -S "$RP" -B "$RP/build" -DCMAKE_BUILD_TYPE=Release >/dev/null
 
 python3 src/gen_meters.py "$RP/docs/user/supported-devices.md"
 

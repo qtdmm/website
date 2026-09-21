@@ -10,7 +10,8 @@ public/api/        Doxygen developer docs (cmake target in ../rp-master/build) �
 src/gen_meters.py  supported-devices.md → public/meters.html
 src/page.sh        wraps a page body in topbar/footer (used when authoring)
 templates/         template for the generated meters page
-build.sh           regenerate meters.html + mkdocs + doxygen
+qtdmm-src/         own clone of QtDMM (master), created by build.sh — not committed
+build.sh           pull qtdmm-src, regenerate meters.html + mkdocs + doxygen
 deploy.sh          lftp mirror to the host (credentials from ~/.netrc or env)
 ```
 
