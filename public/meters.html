@@ -29,12 +29,12 @@
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Supported meters</div>
-        <h2>102 meters from 26 vendors</h2>
-        <p>Choosing a model in <em>Settings → Multimeter</em> fills in these serial parameters. A meter that is not listed but uses one of the 15 protocols below usually works with <em>Manual settings</em> — the <em>Chip</em> column helps: a meter built around the same chip (named in its manual or on the sigrok wiki) almost always speaks the same protocol. See <a href="docs/user/connecting/" target="_blank" rel="noopener">Connecting a meter</a>.</p>
+        <h2>119 meters from 29 vendors</h2>
+        <p>Choosing a model in <em>Settings → Multimeter</em> fills in these serial parameters. A meter that is not listed but uses one of the 16 protocols below usually works with <em>Manual settings</em> — the <em>Chip</em> column helps: a meter built around the same chip (named in its manual or on the sigrok wiki) almost always speaks the same protocol. See <a href="docs/user/connecting/" target="_blank" rel="noopener">Connecting a meter</a>.</p>
       </div>
       <div class="table-tools">
         <input type="search" id="meter-filter" placeholder="Filter by vendor, model or protocol …" aria-label="Filter meters">
-        <select id="vendor-filter" aria-label="Vendor"><option value="">All vendors</option><option value="APPA">APPA</option><option value="Digitech">Digitech</option><option value="Digitek">Digitek</option><option value="Duratool">Duratool</option><option value="ELV">ELV</option><option value="Generic">Generic</option><option value="HoldPeak">HoldPeak</option><option value="Iso-Tech">Iso-Tech</option><option value="MASTECH">MASTECH</option><option value="McVoice">McVoice</option><option value="Metex">Metex</option><option value="PCE">PCE</option><option value="PeakTech">PeakTech</option><option value="Pro'sKit">Pro'sKit</option><option value="Radioshack">Radioshack</option><option value="Sinometer">Sinometer</option><option value="SparkFun">SparkFun</option><option value="Tecpel">Tecpel</option><option value="TekPower">TekPower</option><option value="Tenma">Tenma</option><option value="Uni-Trend">Uni-Trend</option><option value="V&amp;A">V&amp;A</option><option value="Velleman">Velleman</option><option value="Vichy">Vichy</option><option value="Voltcraft">Voltcraft</option><option value="Wintex">Wintex</option></select>
+        <select id="vendor-filter" aria-label="Vendor"><option value="">All vendors</option><option value="APPA">APPA</option><option value="Digitech">Digitech</option><option value="Digitek">Digitek</option><option value="Duratool">Duratool</option><option value="ELV">ELV</option><option value="Generic">Generic</option><option value="GW Instek">GW Instek</option><option value="HoldPeak">HoldPeak</option><option value="Iso-Tech">Iso-Tech</option><option value="MASTECH">MASTECH</option><option value="McVoice">McVoice</option><option value="Metex">Metex</option><option value="Metrel">Metrel</option><option value="PCE">PCE</option><option value="PeakTech">PeakTech</option><option value="Pro'sKit">Pro'sKit</option><option value="Protek">Protek</option><option value="Radioshack">Radioshack</option><option value="Sinometer">Sinometer</option><option value="SparkFun">SparkFun</option><option value="Tecpel">Tecpel</option><option value="TekPower">TekPower</option><option value="Tenma">Tenma</option><option value="Uni-Trend">Uni-Trend</option><option value="V&amp;A">V&amp;A</option><option value="Velleman">Velleman</option><option value="Vichy">Vichy</option><option value="Voltcraft">Voltcraft</option><option value="Wintex">Wintex</option></select>
         <span class="count-note" id="meter-count"></span>
       </div>
       <div class="table-wrap">
@@ -45,7 +45,7 @@
           <tbody>
         <tr data-vendor="APPA"><td>APPA</td><td>71 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>ES51986</td><td><code>CyrustekES51986</code></td><td>19200 7O1</td><td>DTR</td><td>6000</td></tr>
         <tr data-vendor="APPA"><td>APPA</td><td>73 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>ES51986</td><td><code>CyrustekES51986</code></td><td>19200 7O1</td><td>DTR</td><td>6000</td></tr>
-        <tr data-vendor="Digitech"><td>Digitech</td><td>QM1350</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Digitech"><td>Digitech</td><td>QM1350</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Digitech"><td>Digitech</td><td>QM1462</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Digitech"><td>Digitech</td><td>QM1537</td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Digitech"><td>Digitech</td><td>QM1538</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
@@ -58,50 +58,62 @@
         <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 4000 count</td><td>DTM0660</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 6000 count</td><td>DTM0660</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
         <tr data-vendor="Generic"><td>Generic</td><td>DTM0660 8000 count</td><td>DTM0660</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>8000</td></tr>
+        <tr data-vendor="GW Instek"><td>GW Instek</td><td>GDM-397 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="HoldPeak"><td>HoldPeak</td><td>HP-90EPC</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Iso-Tech"><td>Iso-Tech</td><td>IDM 73</td><td>ES51986</td><td><code>CyrustekES51986</code></td><td>19200 7O1</td><td>DTR</td><td>6000</td></tr>
         <tr data-vendor="MASTECH"><td>MASTECH</td><td>M9803R</td><td>-</td><td><code>M9803RContinuous</code></td><td>9600 7E1</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="MASTECH"><td>MASTECH</td><td>MAS-343</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="MASTECH"><td>MASTECH</td><td>MAS-345</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="MASTECH"><td>MASTECH</td><td>MAS-343</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="MASTECH"><td>MASTECH</td><td>MAS-345</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="MASTECH"><td>MASTECH</td><td>MS8250B <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="McVoice"><td>McVoice</td><td>M-345pro</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="McVoice"><td>McVoice</td><td>M-345pro</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="McVoice"><td>McVoice</td><td>M-980T</td><td>-</td><td><code>M9803RContinuous</code></td><td>9600 7N1</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>M-3640D <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>M-3660D</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>M-3830D</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>M-3840D</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>M-3850D</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>M-3850M</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>M-3870D</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N1</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>M-4650C</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>20000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>ME-11</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>ME-22</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>2400 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>ME-32</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>ME-42</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Metex"><td>Metex</td><td>universal system 9160</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3360D <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3640D <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3660D</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3830D</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3840D</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3850D</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3850M</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-3870D</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>M-4650C</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>20000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-11</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-21 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-22</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>2400 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-32</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>ME-42</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>Universal System 9140 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metex"><td>Metex</td><td>universal system 9160</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Metrel"><td>Metrel</td><td>MD9015 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="PCE"><td>PCE</td><td>PCE-DM32 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>2025 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="PeakTech"><td>PeakTech</td><td>3315</td><td>ES51962</td><td><code>CyrustekES51962</code></td><td>2400 7N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="PeakTech"><td>PeakTech</td><td>3330</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="PeakTech"><td>PeakTech</td><td>3415 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>DTM0660</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
         <tr data-vendor="PeakTech"><td>PeakTech</td><td>3430</td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>19200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4010</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4015A</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>100000</td></tr>
-        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4360</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4390</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4010</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4015A</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>100000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4360</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="PeakTech"><td>PeakTech</td><td>4390</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="PeakTech"><td>PeakTech</td><td>451</td><td>-</td><td><code>PeakTech10</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Pro'sKit"><td>Pro'sKit</td><td>MT-1820 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
-        <tr data-vendor="Radioshack"><td>Radioshack</td><td>22-805 DMM</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Protek"><td>Protek</td><td>504 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>1200 7N2</td><td>DTR RTS</td><td>4000</td></tr>
+        <tr data-vendor="Protek"><td>Protek</td><td>505 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>1200 7N2</td><td>DTR RTS</td><td>4000</td></tr>
+        <tr data-vendor="Protek"><td>Protek</td><td>506 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>1200 7N2</td><td>DTR RTS</td><td>4000</td></tr>
+        <tr data-vendor="Radioshack"><td>Radioshack</td><td>22-805 DMM</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Radioshack"><td>Radioshack</td><td>22-812</td><td>-</td><td><code>RS22812Continuous</code></td><td>4800 8N1</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Radioshack"><td>Radioshack</td><td>RS22-168A</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Sinometer"><td>Sinometer</td><td>MAS-343</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Radioshack"><td>Radioshack</td><td>RS22-168A</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Sinometer"><td>Sinometer</td><td>MAS-343</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="SparkFun"><td>SparkFun</td><td>70C <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Tecpel"><td>Tecpel</td><td>DMM-8061 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="TekPower"><td>TekPower</td><td>TP4000ZC</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Tenma"><td>Tenma</td><td>72-1016</td><td>ES51986</td><td><code>CyrustekES51986</code></td><td>19200 7O1</td><td>DTR</td><td>6000</td></tr>
+        <tr data-vendor="Tenma"><td>Tenma</td><td>72-6870 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Tenma"><td>Tenma</td><td>72-7730 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>20000</td></tr>
         <tr data-vendor="Tenma"><td>Tenma</td><td>72-7732</td><td>-</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>40000</td></tr>
         <tr data-vendor="Tenma"><td>Tenma</td><td>72-7745</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Tenma"><td>Tenma</td><td>72-9380A <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>-</td><td><code>VC940Continuous</code></td><td>2400 7O1</td><td>DTR</td><td>40000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT30A <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT30E <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT60A</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT60D <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
         <tr data-vendor="Uni-Trend"><td>Uni-Trend</td><td>UT60E</td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
@@ -120,18 +132,23 @@
         <tr data-vendor="V&amp;A"><td>V&amp;A</td><td>VA40B <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>FS9721 LP3</td><td><code>VC820Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>4000</td></tr>
         <tr data-vendor="Velleman"><td>Velleman</td><td>DVM4100 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>DTM0660</td><td><code>DTM0660</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
         <tr data-vendor="Vichy"><td>Vichy</td><td>VC99</td><td>FS9922-DMM4</td><td><code>QM1537Continuous</code></td><td>2400 8N1</td><td>DTR</td><td>6000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3610D</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3650D</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3860</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>20000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>GDM 703 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>WENS98A</td><td><code>GDM703Continuous</code></td><td>9600 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>GDM 704 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>WENS98A</td><td><code>GDM703Continuous</code></td><td>9600 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>GDM 705 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>WENS98A</td><td><code>GDM703Continuous</code></td><td>9600 8N1</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3610D</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3650D</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-3860</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>20000</td></tr>
         <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4650CR</td><td>-</td><td><code>Voltcraft14Continuous</code></td><td>1200 7N2</td><td>DTR</td><td>20000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>50000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660A</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660M</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-11</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-22T</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>2400 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-32</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-42</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
-        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>MXD-4660A</td><td>Metex ASCII</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660A</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>M-4660M</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-11</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-22T</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>2400 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-32</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>ME-42</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>600 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>MS-9140 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>MS-9160 <sup title="added from chip data, not yet confirmed with QtDMM">?</sup></td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>1200 7N2</td><td>DTR</td><td>4000</td></tr>
+        <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>MXD-4660A</td><td>Metex KS57C2016</td><td><code>Metex14</code></td><td>9600 7N2</td><td>DTR</td><td>50000</td></tr>
         <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 630</td><td>-</td><td><code>Voltcraft14Continuous</code></td><td>4800 7N1</td><td>DTR</td><td>50000</td></tr>
         <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 635</td><td>-</td><td><code>Voltcraft15Continuous</code></td><td>2400 7N1</td><td>DTR</td><td>50000</td></tr>
         <tr data-vendor="Voltcraft"><td>Voltcraft</td><td>VC 650</td><td>-</td><td><code>Voltcraft14Continuous</code></td><td>4800 7N1</td><td>DTR</td><td>50000</td></tr>
@@ -148,7 +165,7 @@
           </tbody>
         </table>
       </div>
-      <p class="count-note" style="margin-top:14px"><em>Serial</em> is baud rate, data bits, parity and stop bits. <em>Lines</em> are the control lines the cable needs driven. <em>Counts</em> is the display resolution. Not every entry has been confirmed on hardware recently; the 19 models marked <sup>?</sup> were added from chip data (libsigrok, ultradmm.com) and have not been tried with QtDMM at all. If you can confirm one, or get an unlisted meter working, please <a href="contact.html">tell us</a>. This list is generated from the decoder registrations in the source code.</p>
+      <p class="count-note" style="margin-top:14px"><em>Serial</em> is baud rate, data bits, parity and stop bits. <em>Lines</em> are the control lines the cable needs driven. <em>Counts</em> is the display resolution. Not every entry has been confirmed on hardware recently; the 36 models marked <sup>?</sup> were added from chip data (libsigrok, ultradmm.com) and have not been tried with QtDMM at all. If you can confirm one, or get an unlisted meter working, please <a href="contact.html">tell us</a>. This list is generated from the decoder registrations in the source code.</p>
     </div>
   </section>
   <script src="js/meters.js"></script>
