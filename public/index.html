@@ -30,7 +30,7 @@
       <div>
         <div class="eyebrow">Free software · Linux · Windows · macOS · FreeBSD</div>
         <h1>Your multimeter, <em>on screen</em>.</h1>
-        <p class="lead">QtDMM reads digital multimeters over serial, USB‑HID and network cables, shows the reading on an analog needle instrument and an LCD panel, and records it over hours or days with a built‑in transient recorder.</p>
+        <p class="lead">QtDMM reads digital multimeters over serial, USB‑HID and network cables — and Victron battery monitors, solar chargers and inverters over Bluetooth LE — shows the reading on an analog needle instrument and an LCD panel, and records it over hours or days with a built‑in transient recorder.</p>
         <div class="actions">
           <a class="btn btn-primary" href="download.html">Download</a>
           <a class="btn btn-outline" href="meters.html">Is my meter supported?</a>
@@ -77,7 +77,7 @@
         <div class="card">
           <div class="icon">⇄</div>
           <h3>Any cable, any port</h3>
-          <p>RS‑232 and USB‑serial, USB‑HID cables (Uni‑Trend UT‑D04/D09, Brymen BU‑86X), RFC2217 over the network — with <b>qtdmm‑bridge</b> on a Raspberry Pi — or sigrok‑cli as a backend.</p>
+          <p>RS‑232 and USB‑serial, USB‑HID cables (Uni‑Trend UT‑D04/D09, Brymen BU‑86X), RFC2217 over the network — with <b>qtdmm‑bridge</b> on a Raspberry Pi — Bluetooth LE, or sigrok‑cli as a backend.</p>
         </div>
         <div class="card">
           <div class="icon">⧉</div>
@@ -90,7 +90,22 @@
 
   <section class="alt">
     <div class="wrap">
-      <div class="feature-row" style="padding-top:0">
+      <div class="feature-row flip" style="padding-top:0">
+        <div>
+          <div class="eyebrow">Bluetooth LE · Victron</div>
+          <h2>Your battery, on the bench</h2>
+          <p class="muted">QtDMM listens to the encrypted Bluetooth advertisements of Victron's <b>SmartShunt</b> / BMV‑712 battery monitors, <b>SmartSolar</b> / BlueSolar MPPT chargers and the <b>Phoenix Inverter Smart</b> — no connection, no pairing, no root. The device key comes from the VictronConnect app; a <em>Scan</em> button in the settings lists what is in range.</p>
+          <ul>
+            <li>Pick the value that becomes the reading — display, needle, recorder — and a second one for the display's lower line and the readings table</li>
+            <li>SmartShunt: battery voltage, current, power, state of charge, consumed Ah, time to go, aux input</li>
+            <li>MPPT: PV power, battery voltage, charging current, yield today, load current · Phoenix: AC power, voltage, current</li>
+            <li>Qt 6 Bluetooth, Linux via BlueZ; verified live on all three device types</li>
+          </ul>
+          <p><a href="docs/user/bluetooth/" target="_blank" rel="noopener">Setup in the handbook →</a></p>
+        </div>
+        <div class="media"><img src="img/victron-smartshunt.png" alt="QtDMM reading a Victron SmartShunt over Bluetooth LE: 13.22 V on display and analog meter, current as second value in the readings table" width="1000" height="868"></div>
+      </div>
+      <div class="feature-row">
         <div>
           <div class="eyebrow">qtdmm‑bridge</div>
           <h2>Meters in the lab, QtDMM on your desk</h2>
@@ -129,13 +144,13 @@ $ ./qtdmm_bridge.py --port 4000=/dev/ttyUSB0 \
         <p>Every model is selected from a vendor/model list that fills in the serial settings for you. Unknown meters that speak a known protocol work with manual settings.</p>
       </div>
       <div class="stat-row">
-        <div><span class="stat">130+</span><small>meter models</small></div>
-        <div><span class="stat">22</span><small>wire protocols</small></div>
-        <div><span class="stat">4</span><small>connection backends</small></div>
+        <div><span class="stat">139</span><small>meters &amp; devices</small></div>
+        <div><span class="stat">23</span><small>wire protocols</small></div>
+        <div><span class="stat">5</span><small>connection backends</small></div>
         <div><span class="stat">5</span><small>languages</small></div>
       </div>
       <div class="vendor-cloud">
-        <a href="meters.html?vendor=Uni-Trend">Uni‑Trend</a><a href="meters.html?vendor=Voltcraft">Voltcraft</a><a href="meters.html?vendor=Metex">Metex</a><a href="meters.html?vendor=MASTECH">MASTECH</a><a href="meters.html?vendor=PeakTech">PeakTech</a><a href="meters.html?vendor=Tenma">Tenma</a><a href="meters.html?vendor=Fluke">Fluke</a><a href="meters.html?vendor=Brymen">Brymen</a><a href="meters.html?vendor=APPA">APPA</a><a href="meters.html?vendor=GW%20Instek">GW Instek</a><a href="meters.html?vendor=Metrel">Metrel</a><a href="meters.html?vendor=Protek">Protek</a><a href="meters.html?vendor=Velleman">Velleman</a><a href="meters.html?vendor=PCE">PCE</a><a href="meters.html?vendor=Digitech">Digitech</a><a href="meters.html?vendor=Digitek">Digitek</a><a href="meters.html?vendor=Radioshack">Radioshack</a><a href="meters.html?vendor=ELV">ELV</a><a href="meters.html?vendor=McVoice">McVoice</a><a href="meters.html?vendor=Vichy">Vichy</a><a href="meters.html?vendor=TekPower">TekPower</a><a href="meters.html?vendor=HoldPeak">HoldPeak</a><a href="meters.html?vendor=Iso-Tech">Iso‑Tech</a><a href="meters.html?vendor=Duratool">Duratool</a><a href="meters.html?vendor=Tecpel">Tecpel</a><a href="meters.html?vendor=Pro%27sKit">Pro’sKit</a><a href="meters.html?vendor=V%26A">V&amp;A</a><a href="meters.html?vendor=Wintex">Wintex</a><a href="meters.html?vendor=SparkFun">SparkFun</a><a href="meters.html?vendor=Generic">DTM0660 generic</a>
+        <a href="meters.html?vendor=Uni-Trend">Uni‑Trend</a><a href="meters.html?vendor=Voltcraft">Voltcraft</a><a href="meters.html?vendor=Metex">Metex</a><a href="meters.html?vendor=MASTECH">MASTECH</a><a href="meters.html?vendor=PeakTech">PeakTech</a><a href="meters.html?vendor=Tenma">Tenma</a><a href="meters.html?vendor=Fluke">Fluke</a><a href="meters.html?vendor=Victron">Victron</a><a href="meters.html?vendor=Brymen">Brymen</a><a href="meters.html?vendor=APPA">APPA</a><a href="meters.html?vendor=GW%20Instek">GW Instek</a><a href="meters.html?vendor=Metrel">Metrel</a><a href="meters.html?vendor=Protek">Protek</a><a href="meters.html?vendor=Velleman">Velleman</a><a href="meters.html?vendor=PCE">PCE</a><a href="meters.html?vendor=Digitech">Digitech</a><a href="meters.html?vendor=Digitek">Digitek</a><a href="meters.html?vendor=Radioshack">Radioshack</a><a href="meters.html?vendor=ELV">ELV</a><a href="meters.html?vendor=McVoice">McVoice</a><a href="meters.html?vendor=Vichy">Vichy</a><a href="meters.html?vendor=TekPower">TekPower</a><a href="meters.html?vendor=HoldPeak">HoldPeak</a><a href="meters.html?vendor=Iso-Tech">Iso‑Tech</a><a href="meters.html?vendor=Duratool">Duratool</a><a href="meters.html?vendor=Tecpel">Tecpel</a><a href="meters.html?vendor=Pro%27sKit">Pro’sKit</a><a href="meters.html?vendor=V%26A">V&amp;A</a><a href="meters.html?vendor=Wintex">Wintex</a><a href="meters.html?vendor=SparkFun">SparkFun</a><a href="meters.html?vendor=Generic">DTM0660 generic</a>
       </div>
       <a class="btn btn-outline" href="meters.html">Full list of supported meters →</a>
     </div>
