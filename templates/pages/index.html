@@ -71,10 +71,11 @@
           <h2>Meters in the lab, QtDMM on your desk</h2>
           <p class="muted">A Raspberry Pi or any old box next to the bench runs <b>qtdmm‑bridge</b> — one Python file, pyserial its only dependency — and serves each meter on a TCP port. QtDMM connects over RFC 2217 and sends baud rate, parity and DTR/RTS itself, so the bridge knows nothing about meters: every model QtDMM supports works through it unchanged.</p>
           <ul>
-            <li>One TCP port per meter, stable <code>by‑id</code> device names, reconnect after re‑plugging</li>
+            <li>One TCP port per meter, stable <code>by‑id</code> device names, reconnect after re‑plugging — and QtDMM reconnects itself after a bridge restart</li>
             <li>Serial cables and USB‑HID cables (UT‑D04, UT‑D09, Brymen BU‑86X) alike — HID meters remote for the first time</li>
             <li>Command line, or a TOML config that <code>--print-config</code> writes from what it finds; systemd unit; optional mDNS announcement</li>
             <li>No authentication — keep it on a trusted LAN or behind an SSH tunnel</li>
+            <li class="muted">Running an early copy? Update to <code>qtdmm_bridge.py</code> 0.2.0 — it fixes swapped odd/even parity, which broke 7O1 meters such as the UT61E over the bridge</li>
           </ul>
           <p><a href="docs/user/remote-bridge/" target="_blank" rel="noopener">Setup in the handbook →</a> &nbsp;·&nbsp; <a href="https://github.com/tuxmaster/QtDMM/tree/master/tools/qtdmm-bridge">README on GitHub →</a></p>
         </div>

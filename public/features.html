@@ -86,7 +86,7 @@
             <li><b>RFC2217 remote serial</b> — the meter sits next to the device under test, QtDMM sits on your desk. <b>qtdmm‑bridge</b>, a single Python file shipped with QtDMM, serves serial and USB‑HID meters from a Raspberry Pi; QtDMM sends the line settings itself, so any supported meter works through it. Runs as a systemd service, announces itself via mDNS. Details in the <a href="docs/user/remote-bridge/" target="_blank" rel="noopener">handbook</a>.</li>
             <li><b>sigrok‑cli</b> — use any meter sigrok supports as a data source</li>
           </ul>
-          <p>Picking a vendor and model fills in baud rate, parity, stop bits and the control lines the cable needs. Unknown meters: choose <em>Manual settings</em> and a protocol.</p>
+          <p>Picking a vendor and model fills in baud rate, parity, stop bits and the control lines the cable needs. Unknown meters: choose <em>Manual settings</em> and a protocol. QtDMM notices when a meter goes quiet or a connection is lost — cable, bridge or network — and reconnects on its own as long as <em>Connect</em> is pressed.</p>
         </div>
       </div>
 
