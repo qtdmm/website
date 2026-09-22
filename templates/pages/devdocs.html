@@ -29,7 +29,7 @@
   <section class="alt">
     <div class="wrap prose">
       <h2 id="build">Building from source</h2>
-      <p>QtDMM needs a C++17 compiler, CMake ≥ 3.16, Qt 6 with the <b>SerialPort</b>, <b>Charts</b> and <b>Linguist tools</b> modules, and <code>hidapi</code> for USB‑HID cables. Qt <b>Bluetooth</b> (<em>Connectivity</em>) is optional — without it the program is built without the Bluetooth LE port. Install the packages for your system, then the steps are the same everywhere:</p>
+      <p>QtDMM needs a C++17 compiler, CMake ≥ 3.16, Qt 6 with the <b>SerialPort</b>, <b>Charts</b> and <b>Linguist tools</b> modules, and <code>hidapi</code> for USB‑HID cables. Qt <b>Bluetooth</b> (<em>Connectivity</em>) is optional — without it the program is built without the Bluetooth LE port. Install the packages for your system — the lists below are what the CI builds use; package names can differ between distributions and releases, so if one is not found, search your package manager for the Qt 6 module (<code>serialport</code>, <code>charts</code>, <code>connectivity</code>, <code>tools</code>) and for <code>hidapi</code>. Then the steps are the same everywhere:</p>
 <pre><code>git clone https://github.com/tuxmaster/QtDMM.git
 cd QtDMM
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
