@@ -72,7 +72,6 @@
             <li>Mouse‑wheel zoom, middle‑button pan</li>
             <li>CSV export and import with SI prefixes (µ, m, k, M …), printing</li>
             <li>Run an external command when a threshold is hit</li>
-            <li><b>Alarms</b> (Settings → Alarms): below / above / outside / inside a range, overload, or no readings for a while — with hold time and hysteresis against chatter. Actions: banner over the graph, beep, popup, bring window to front, mark in the recorder, run a program, start or stop the recorder. <a href="docs/user/alarms/" target="_blank" rel="noopener">Handbook</a>.</li>
           </ul>
         </div>
       </div>
@@ -92,6 +91,23 @@
       </div>
 
       <div class="feature-row">
+        <div class="media">
+          <img src="img/alarms.png" alt="QtDMM with a red alarm banner 'Low voltage: Battery voltage low' and an Acknowledge button over the recorder graph; the alarm started the recorder and marked the graph" width="1000" height="900">
+        </div>
+        <div>
+          <h3>Alarms</h3>
+          <p>Tell QtDMM what you expect — below 12 V, above 2 A, no readings for 10 s — and it acts when the reading leaves that range. Each instance keeps its own list under <em>Settings → Alarms</em>.</p>
+          <ul>
+            <li>Conditions: reading below / above, outside or inside a range, overload, no readings for N seconds</li>
+            <li>No chatter: <em>for at least N s</em> ignores spikes, a hysteresis keeps a raised alarm from flapping</li>
+            <li>Actions, any combination: banner over the graph with Acknowledge, beep, popup, bring the window to front, start or stop the recorder, mark in the graph and the readings table</li>
+            <li>Run a program with <code>%v</code>, <code>%u</code>, <code>%n</code> — the hook for notify‑send, mail, a webhook or a relay</li>
+          </ul>
+          <p><a href="docs/user/alarms/" target="_blank" rel="noopener">Alarms in the handbook →</a></p>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
         <div class="media"><img src="img/settings-dmm.png" alt="Settings dialog, DMM page: vendor Uni-Trend, model UT61E selected, serial parameters filled in" width="800" height="814"></div>
         <div>
           <h3>Connection backends</h3>
