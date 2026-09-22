@@ -41,7 +41,7 @@
         <div class="card">
           <div class="icon">∿</div>
           <h3>Transient recorder</h3>
-          <p>Start manually, at a scheduled time or when a threshold is crossed. Zoom, pan, cursor read‑out, integration curve, print and CSV export.</p>
+          <p>Start manually, at a scheduled time or when a threshold is crossed. Zoom, pan, cursor read‑out, integration curve, print and CSV export. <b>Alarms</b> raise a banner, beep, popup or program when the reading leaves its range, overloads or stops coming.</p>
           <img class="shot" src="img/recorder.png" alt="Transient recorder graph: a 12 V supply recorded over five minutes with two dropouts" width="1100" height="520">
         </div>
         <div class="card">
@@ -88,7 +88,7 @@
           <ul>
             <li>One TCP port per meter, stable <code>by‑id</code> device names, reconnect after re‑plugging — and QtDMM reconnects itself after a bridge restart</li>
             <li>Serial cables and USB‑HID cables (UT‑D04, UT‑D09, Brymen BU‑86X) alike — HID meters remote for the first time</li>
-            <li>Command line, or a TOML config that <code>--print-config</code> writes from what it finds; systemd unit; optional mDNS announcement</li>
+            <li>Command line, or a TOML config that <code>--print-config</code> writes from what it finds; systemd unit; announces itself by mDNS — <em>Find bridges</em> in QtDMM lists every bridge on the network</li>
             <li>No authentication — keep it on a trusted LAN or behind an SSH tunnel</li>
             <li class="muted">Running an early copy? Update to <code>qtdmm_bridge.py</code> 0.2.0 — it fixes swapped odd/even parity, which broke 7O1 meters such as the UT61E over the bridge</li>
           </ul>
