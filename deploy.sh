@@ -7,9 +7,8 @@
 #   * export FTP_HOST, FTP_USER and FTP_PASS.
 # FTP_DIR is the remote directory (default: /), FTP_PROTO ftp|ftps|sftp
 #
-# The mirror deletes remote files that are not in public/, so anything the
-# hoster keeps inside the document root is excluded below: statistik/
-# (Webalizer) and .htaccess/.htpasswd (access protection, redirects).
+# The mirror deletes remote files that are not in public/, so .htaccess and
+# .htpasswd (canonical redirect, access protection) are excluded below.
 # (default: ftps — plain ftp only if the host really has nothing better).
 #
 #   ./deploy.sh           # build, then mirror
@@ -44,7 +43,7 @@ set ftp:ssl-protect-data true
 set ssl:verify-certificate true
 mirror --reverse --delete --verbose --parallel=4 $dry \
   --exclude-glob .DS_Store --exclude-glob '*.swp' \
-  --exclude-glob 'statistik/' --exclude-glob '.htaccess' --exclude-glob '.htpasswd' \
+  --exclude-glob '.htaccess' --exclude-glob '.htpasswd' \
   public/ $FTP_DIR
 bye
 LFTP
