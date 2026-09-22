@@ -70,6 +70,7 @@
             <li>Integration curve (running sum — Ah, Wh, …)</li>
             <li>Mouse‑wheel zoom, middle‑button pan</li>
             <li>Export as CSV, Excel (.xlsx) or OpenDocument (.ods) — real date and number cells, bold frozen header, ready for charts and formulas; CSV import with SI prefixes (µ, m, k, M …); printing</li>
+            <li>Export the graph itself as SVG, PDF, PNG or JPEG — see below</li>
             <li>Run an external command when a threshold is hit</li>
           </ul>
         </div>
@@ -131,6 +132,15 @@
             <li>Inputs are combined in base units; the result gets a fitting prefix (12 V × 0.5 mA = 6.00 mW)</li>
             <li>Shows OL and names the missing input when a meter drops out</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="feature-row flip">
+        <div class="media"><img class="sheet" src="img/graph-export.svg" alt="A QtDMM recording exported as SVG: the curve with grid, axes and labels as vector graphics" width="998" height="404"></div>
+        <div>
+          <h3>The graph as a file — SVG, PDF, PNG, JPEG</h3>
+          <p><em>Export image…</em> in the graph's context menu writes the recording to a file. <b>SVG</b> and <b>PDF</b> keep the curve, the grid, the axes and their labels as vectors: sharp at any size, editable in Inkscape, and ready to drop into a document, a paper or a web page. PNG and JPEG are pixels, for when a picture is all you need.</p>
+          <p>The SVG carries the recording's start time, its number of values, the sample rate and the unit as title and description — so the file still says what it shows a year later. The picture on the left is not a screenshot: it is such an export, straight from the running program.</p>
         </div>
       </div>
 

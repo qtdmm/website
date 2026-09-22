@@ -116,6 +116,7 @@ section:not(.alt) .card { background: var(--bezel-2); }
 .card h3 { margin: 4px 0 0; }
 .card p { color: var(--dial-dim); margin: 0; }
 .card img { border-radius: 8px; border: 1px solid var(--chrome); }
+.media img.sheet { background: #fff; padding: 10px; }
 .card .shot { margin-top: auto; }
 
 /* placeholder screenshot boxes */

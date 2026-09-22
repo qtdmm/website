@@ -29,7 +29,7 @@
   <section class="alt">
     <div class="wrap prose">
       <h2 id="build">Building from source</h2>
-      <p>QtDMM needs a C++17 compiler, CMake ≥ 3.16, Qt 6 with the <b>SerialPort</b>, <b>Charts</b> and <b>Linguist tools</b> modules, and <code>hidapi</code> for USB‑HID cables. Qt <b>Bluetooth</b> (<em>Connectivity</em>) is optional — without it the program is built without the Bluetooth LE port. Install the packages for your system — the lists below are what the CI builds use; package names can differ between distributions and releases, so if one is not found, search your package manager for the Qt 6 module (<code>serialport</code>, <code>charts</code>, <code>connectivity</code>, <code>tools</code>) and for <code>hidapi</code>. Then the steps are the same everywhere:</p>
+      <p>QtDMM needs a C++17 compiler, CMake ≥ 3.16, Qt 6 with the <b>SerialPort</b>, <b>Charts</b>, <b>SVG</b> and <b>Linguist tools</b> modules, and <code>hidapi</code> for USB‑HID cables. Qt <b>Bluetooth</b> (<em>Connectivity</em>) is optional — without it the program is built without the Bluetooth LE port. Install the packages for your system — the lists below are what the CI builds use; package names can differ between distributions and releases, so if one is not found, search your package manager for the Qt 6 module (<code>serialport</code>, <code>charts</code>, <code>connectivity</code>, <code>tools</code>) and for <code>hidapi</code>. Then the steps are the same everywhere:</p>
 <pre><code>git clone https://github.com/tuxmaster/QtDMM.git
 cd QtDMM
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -42,27 +42,27 @@ sudo cmake --install build          # optional: install system‑wide</code></pr
       <h3>Debian, Ubuntu and derivatives</h3>
 <pre><code>sudo apt install build-essential cmake ninja-build git \
     qt6-base-dev qt6-tools-dev qt6-tools-dev-tools \
-    qt6-serialport-dev qt6-charts-dev qt6-connectivity-dev \
+    qt6-serialport-dev qt6-charts-dev qt6-connectivity-dev qt6-svg-dev \
     libhidapi-dev</code></pre>
       <p>Ubuntu 22.04 ships Qt 6.2, which is enough; 24.04 and Debian 12 or later have everything in the main repositories.</p>
 
       <h3>Fedora and other RPM‑based systems</h3>
 <pre><code>sudo dnf install gcc-c++ cmake ninja-build git \
     qt6-qtbase-devel qt6-qttools-devel \
-    qt6-qtserialport-devel qt6-qtcharts-devel qt6-qtconnectivity-devel \
+    qt6-qtserialport-devel qt6-qtcharts-devel qt6-qtconnectivity-devel qt6-qtsvg-devel \
     hidapi-devel</code></pre>
       <p>openSUSE uses the same package names with <code>zypper</code>; on RHEL/Rocky/Alma the Qt 6 modules come from EPEL.</p>
 
       <h3>FreeBSD</h3>
 <pre><code>pkg install cmake ninja pkgconf git \
-    qt6-base qt6-serialport qt6-charts qt6-connectivity qt6-tools hidapi</code></pre>
+    qt6-base qt6-serialport qt6-charts qt6-connectivity qt6-svg qt6-tools hidapi</code></pre>
       <p>Serial ports are <code>/dev/cuaU0</code> and so on; USB‑HID cables appear as <code>/dev/uhid</code> devices, which hidapi opens directly.</p>
 
       <h3>Arch Linux and macOS</h3>
-      <p><b>Arch:</b> <code>sudo pacman -S cmake ninja qt6-base qt6-tools qt6-serialport qt6-charts qt6-connectivity hidapi</code>, or build the package with the <code>PKGBUILD</code> in the repository. <b>macOS:</b> <code>brew install cmake ninja qt hidapi</code>; Homebrew's <code>qt</code> contains all modules, so the same three CMake lines produce <code>build/qtdmm.app</code>.</p>
+      <p><b>Arch:</b> <code>sudo pacman -S cmake ninja qt6-base qt6-tools qt6-serialport qt6-charts qt6-connectivity qt6-svg hidapi</code>, or build the package with the <code>PKGBUILD</code> in the repository. <b>macOS:</b> <code>brew install cmake ninja qt hidapi</code>; Homebrew's <code>qt</code> contains all modules, so the same three CMake lines produce <code>build/qtdmm.app</code>.</p>
 
       <h3>Windows</h3>
-      <p>This is how the CI builds the installer; it uses Visual Studio 2022 (the free <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Build Tools</a> are enough — select the <em>Desktop development with C++</em> workload) and Qt from the <a href="https://www.qt.io/download-open-source">Qt online installer</a>. In the installer pick a Qt 6.8 release with the <em>MSVC 2022 64‑bit</em> kit and the additional modules <em>Qt Serial Port</em>, <em>Qt Charts</em> and <em>Qt Connectivity</em>. <code>hidapi</code> is fetched and compiled by CMake automatically. Then, in an <em>x64 Native Tools Command Prompt for VS 2022</em>:</p>
+      <p>This is how the CI builds the installer; it uses Visual Studio 2022 (the free <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Build Tools</a> are enough — select the <em>Desktop development with C++</em> workload) and Qt from the <a href="https://www.qt.io/download-open-source">Qt online installer</a>. In the installer pick a Qt 6.8 release with the <em>MSVC 2022 64‑bit</em> kit and the additional modules <em>Qt Serial Port</em>, <em>Qt Charts</em> and <em>Qt Connectivity</em> (Qt SVG is part of the base installation). <code>hidapi</code> is fetched and compiled by CMake automatically. Then, in an <em>x64 Native Tools Command Prompt for VS 2022</em>:</p>
 <pre><code>git clone https://github.com/tuxmaster/QtDMM.git
 cd QtDMM
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release ^
