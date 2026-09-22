@@ -124,6 +124,28 @@
       </div>
 
       <div class="feature-row flip">
+        <div class="media">
+<pre><code>$ lxi discover -m
+QtDMM (bench.local)  192.168.1.20:5025
+$ lxi scpi -a bench.local -p 5025 -r "*IDN?"
+QtDMM,Uni-Trend UT61E,0,2026.9.22
+$ lxi scpi -a bench.local -p 5025 -r "READ?;UNIT?;CONF?"
++1.234500E+00;"V";"VOLT:DC AUTO"
+$ printf 'INIT\n' | nc bench.local 5025      # start the recorder</code></pre>
+        </div>
+        <div>
+          <h3>SCPI server — QtDMM as a network instrument</h3>
+          <p>QtDMM answers <code>*IDN?</code>, <code>READ?</code>, <code>CONF?</code> and friends on a TCP port (5025, lxi‑tools style). A consumer multimeter on a USB cable, a Victron device over Bluetooth or the virtual meter becomes a network instrument for lxi‑tools, PyVISA, LabVIEW or five lines of Python. Announced by mDNS (<code>_scpi-raw._tcp</code>), so <code>lxi discover -m</code> finds it.</p>
+          <ul>
+            <li><code>INITiate</code> / <code>ABORt</code> start and stop the recorder, <code>INPut ON|OFF</code> connect and disconnect</li>
+            <li><code>HCOPy:SDUMp:DATA?</code> returns a screenshot of the QtDMM window — like a bench meter's screen dump</li>
+            <li>Read‑only towards the meter, off by default, localhost‑only unless you open it up</li>
+          </ul>
+          <p><a href="docs/user/scpi-server/" target="_blank" rel="noopener">Setup in the handbook →</a> &nbsp;·&nbsp; <a href="docs/dev/scpi-commands/" target="_blank" rel="noopener">Command reference →</a></p>
+        </div>
+      </div>
+
+      <div class="feature-row">
         <div class="media"><img src="img/help.png" alt="Built-in handbook window showing the Connecting a meter page" width="1130" height="880"></div>
         <div>
           <h3>Handbook, shortcuts, command line</h3>

@@ -114,6 +114,7 @@
             <li>Serial cables and USB‑HID cables (UT‑D04, UT‑D09, Brymen BU‑86X) alike — HID meters remote for the first time</li>
             <li>Command line, or a TOML config that <code>--print-config</code> writes from what it finds; systemd unit; announces itself by mDNS — <em>Find bridges</em> in QtDMM lists every bridge on the network</li>
             <li>No authentication — keep it on a trusted LAN or behind an SSH tunnel</li>
+            <li>And the other way round: QtDMM's own <b>SCPI server</b> answers <code>*IDN?</code>, <code>READ?</code>, <code>CONF?</code> on port 5025, so any supported meter becomes a network instrument for lxi‑tools, PyVISA or LabVIEW — <a href="features.html">more</a></li>
             <li class="muted">Running an early copy? Update to <code>qtdmm_bridge.py</code> 0.2.0 — it fixes swapped odd/even parity, which broke 7O1 meters such as the UT61E over the bridge</li>
           </ul>
           <p><a href="docs/user/remote-bridge/" target="_blank" rel="noopener">Setup in the handbook →</a> &nbsp;·&nbsp; <a href="https://github.com/tuxmaster/QtDMM/tree/master/tools/qtdmm-bridge">README on GitHub →</a></p>
