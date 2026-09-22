@@ -231,3 +231,6 @@ footer a:hover { color: var(--lcd); }
 .legend dt sup { color: var(--red); font-size: 1rem; }
 .legend dd { margin: 0; color: var(--dial-dim); }
 .legend dd b { color: var(--dial); }
+.legend dd ul { margin: 6px 0 0; padding-left: 1.2em; }
+.mod { display: inline-block; font-family: var(--mono); font-size: .68rem; font-weight: 600; line-height: 1.3; padding: 0 5px; border-radius: 4px; background: var(--red); color: #fff; vertical-align: 2px; }
+a.mod:hover { background: var(--red-dark); color: #fff; text-decoration: none; }

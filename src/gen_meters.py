@@ -37,8 +37,9 @@ def parse(md: str):
         model = d.get("model", "")
         rows.append({
             "vendor": d.get("vendor", ""),
-            "model": model.replace("¹", "").strip(),
+            "model": model.replace("¹", "").replace("²", "").strip(),
             "unconfirmed": "¹" in model,
+            "hwmod": "²" in model,
             "chip": d.get("chip", "-"),
             "proto": d.get("protocol", "").strip("`"),
             "serial": d.get("serial", ""),
@@ -46,6 +47,33 @@ def parse(md: str):
             "counts": d.get("counts", ""),
         })
     return rows
+
+
+LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+STRONG = re.compile(r"\*\*([^*]+)\*\*")
+EM = re.compile(r"\*([^*]+)\*")
+
+
+def md_inline(text: str) -> str:
+    """The little Markdown the footnotes use: links, **bold**, *em*."""
+    text = esc(text)
+    text = LINK.sub(r'<a href="\2">\1</a>', text)
+    text = STRONG.sub(r"<b>\1</b>", text)
+    return EM.sub(r"<em>\1</em>", text)
+
+
+def hwmod_notes(text: str) -> list[str]:
+    """Bullet list following the '² needs a hardware modification' footnote."""
+    notes, inside = [], False
+    for line in text.splitlines():
+        if line.startswith("²"):
+            inside = True
+            continue
+        if inside and line.startswith("- "):
+            notes.append(md_inline(line[2:].strip()))
+        elif inside and notes and not line.strip():
+            break
+    return notes
 
 
 def main():
@@ -56,9 +84,12 @@ def main():
     vendors = sorted({r["vendor"] for r in rows}, key=str.lower)
     protos = sorted({r["proto"] for r in rows})
 
+    notes = hwmod_notes(src.read_text(encoding="utf-8"))
     tr = []
     for r in rows:
         mark = ' <sup title="added from chip data, not yet confirmed with QtDMM">?</sup>' if r["unconfirmed"] else ""
+        if r["hwmod"]:
+            mark += ' <a class="mod" href="#hwmod" title="needs a hardware modification – the meter has no interface as sold">mod</a>'
         tr.append(
             f'        <tr data-vendor="{esc(r["vendor"])}">'
             f'<td>{esc(r["vendor"])}</td><td>{esc(r["model"])}{mark}</td>'
@@ -74,7 +105,10 @@ def main():
                 .replace("@N_METERS@", str(len(rows)))
                 .replace("@N_VENDORS@", str(len(vendors)))
                 .replace("@N_PROTOS@", str(len(protos)))
-                .replace("@N_UNCONFIRMED@", str(sum(r["unconfirmed"] for r in rows))))
+                .replace("@N_UNCONFIRMED@", str(sum(r["unconfirmed"] for r in rows)))
+                .replace("@HWMOD_NOTES@", "".join(f"<li>{n}</li>" for n in notes)))
+    if not notes:   # no such footnote in the source yet: drop the legend row
+        html = re.sub(r'\s*<div id="hwmod">.*?</div>\n', "\n", html, count=1, flags=re.S)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
     print(f"{OUT.relative_to(ROOT)}: {len(rows)} meters, {len(vendors)} vendors, {len(protos)} protocols")
