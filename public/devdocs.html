@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docs & Dev – QtDMM</title>
+  <meta name="description" content="QtDMM documentation and development: handbook, API reference, building from source on Linux, FreeBSD and Windows, contributing.">
+  <link rel="icon" href="img/qtdmm_128.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt=""><span>Qt<b>DMM</b></span></a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="meters.html">Supported Meters</a>
+        <a href="history.html">History</a>
+        <a href="devdocs.html" class="active">Docs &amp; Dev</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Docs &amp; Dev</div>
+        <h2>Documentation and development</h2>
+        <p>Everything for reading up on QtDMM and for working on it: the user handbook, the API reference generated from the source, and how to build the program yourself.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Handbook</h3>
+          <p>The user manual — connecting a meter, recorder, alarms, calculated values, Bluetooth, the remote bridge, keyboard shortcuts and troubleshooting. The same text is built into the program (F1).</p>
+          <p style="margin-top:auto"><a class="btn btn-primary" href="docs/" target="_blank" rel="noopener">Open handbook →</a></p>
+        </div>
+        <div class="card">
+          <h3>API reference</h3>
+          <p>Doxygen documentation of the current development state: <code>DMM</code>, <code>PortHandler</code>, <code>ReaderThread</code>, the <code>DmmDecoder</code> subclasses, <code>MainWid</code>, <code>DMMGraph</code> — with class and collaboration diagrams. Always generated from <code>master</code>.</p>
+          <p style="margin-top:auto"><a class="btn btn-outline" href="api/" target="_blank" rel="noopener">Open API docs →</a></p>
+        </div>
+        <div class="card">
+          <h3>Protocols &amp; developer notes</h3>
+          <p>Protocol specifications with test vectors for every supported chip, and the developer pages on adding a decoder or a USB‑HID cable chip.</p>
+          <p style="margin-top:auto"><a class="btn btn-outline" href="docs/protocols/" target="_blank" rel="noopener">Protocols →</a> &nbsp; <a class="btn btn-outline" href="docs/dev/" target="_blank" rel="noopener">Dev pages →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap prose">
+      <h2 id="build">Building from source</h2>
+      <p>QtDMM needs a C++17 compiler, CMake ≥ 3.16, Qt 6 with the <b>SerialPort</b>, <b>Charts</b> and <b>Linguist tools</b> modules, and <code>hidapi</code> for USB‑HID cables. Qt <b>Bluetooth</b> (<em>Connectivity</em>) is optional — without it the program is built without the Bluetooth LE port. Install the packages for your system, then the steps are the same everywhere:</p>
+<pre><code>git clone https://github.com/tuxmaster/QtDMM.git
+cd QtDMM
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel
+./build/qtdmm                       # run it
+ctest --test-dir build              # optional: run the test suite
+sudo cmake --install build          # optional: install system‑wide</code></pre>
+      <p>On Linux and FreeBSD <code>./compile.sh</code> wraps the same steps (<code>compile.sh run</code>, <code>ctest</code>, <code>install</code>, <code>pack</code> for a <code>.deb</code> and source tarball, <code>appimage</code>, <code>doxygen</code>).</p>
+
+      <h3>Debian, Ubuntu and derivatives</h3>
+<pre><code>sudo apt install build-essential cmake ninja-build git \
+    qt6-base-dev qt6-tools-dev qt6-tools-dev-tools \
+    qt6-serialport-dev qt6-charts-dev qt6-connectivity-dev \
+    libhidapi-dev</code></pre>
+      <p>Ubuntu 22.04 ships Qt 6.2, which is enough; 24.04 and Debian 12 or later have everything in the main repositories.</p>
+
+      <h3>Fedora and other RPM‑based systems</h3>
+<pre><code>sudo dnf install gcc-c++ cmake ninja-build git \
+    qt6-qtbase-devel qt6-qttools-devel \
+    qt6-qtserialport-devel qt6-qtcharts-devel qt6-qtconnectivity-devel \
+    hidapi-devel</code></pre>
+      <p>openSUSE uses the same package names with <code>zypper</code>; on RHEL/Rocky/Alma the Qt 6 modules come from EPEL.</p>
+
+      <h3>FreeBSD</h3>
+<pre><code>pkg install cmake ninja pkgconf git \
+    qt6-base qt6-serialport qt6-charts qt6-connectivity qt6-tools hidapi</code></pre>
+      <p>Serial ports are <code>/dev/cuaU0</code> and so on; USB‑HID cables appear as <code>/dev/uhid</code> devices, which hidapi opens directly.</p>
+
+      <h3>Arch Linux and macOS</h3>
+      <p><b>Arch:</b> <code>sudo pacman -S cmake ninja qt6-base qt6-tools qt6-serialport qt6-charts qt6-connectivity hidapi</code>, or build the package with the <code>PKGBUILD</code> in the repository. <b>macOS:</b> <code>brew install cmake ninja qt hidapi</code>; Homebrew's <code>qt</code> contains all modules, so the same three CMake lines produce <code>build/qtdmm.app</code>.</p>
+
+      <h3>Windows</h3>
+      <p>This is how the CI builds the installer; it uses Visual Studio 2022 (the free <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Build Tools</a> are enough — select the <em>Desktop development with C++</em> workload) and Qt from the <a href="https://www.qt.io/download-open-source">Qt online installer</a>. In the installer pick a Qt 6.8 release with the <em>MSVC 2022 64‑bit</em> kit and the additional modules <em>Qt Serial Port</em>, <em>Qt Charts</em> and <em>Qt Connectivity</em>. <code>hidapi</code> is fetched and compiled by CMake automatically. Then, in an <em>x64 Native Tools Command Prompt for VS 2022</em>:</p>
+<pre><code>git clone https://github.com/tuxmaster/QtDMM.git
+cd QtDMM
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release ^
+    -DCMAKE_PREFIX_PATH=C:\Qt\6.8.3\msvc2022_64
+cmake --build build
+cmake --install build --prefix dist      # dist\qtdmm.exe plus the Qt DLLs (windeployqt runs automatically)</code></pre>
+      <p>Adjust the Qt path to the version you installed. <code>cpack --config build\CPackConfig.cmake</code> produces the portable ZIP and, with <a href="https://jrsoftware.org/isinfo.php">Inno Setup</a> installed, the installer — exactly what the <a href="https://github.com/tuxmaster/QtDMM/actions">GitHub workflow</a> publishes, so if you just want to run a current build, take its artifact instead.</p>
+
+      <h3>After the build</h3>
+      <p>On Linux, add yourself to the group that owns the serial port (<code>dialout</code> on Debian/Ubuntu/Fedora, <code>uucp</code> on Arch) and log in again; QtDMM names the group if it cannot open a port. Bench meters through sigrok need <code>sigrok-cli</code> installed separately — see the <a href="download.html#sigrok">download page</a>. The API documentation is built with <code>cmake --build build --target doxygen</code> when Doxygen (and optionally Graphviz) is installed.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Contributing</h2>
+      <p>Development happens on <a href="https://github.com/tuxmaster/QtDMM">github.com/tuxmaster/QtDMM</a>. Bug reports, meters that work or don't, and pull requests go there:</p>
+      <ul>
+        <li><a href="https://github.com/tuxmaster/QtDMM/issues">Issues</a> — bugs, feature requests, protocol captures of unsupported meters</li>
+        <li><a href="https://github.com/tuxmaster/QtDMM/pulls">Pull requests</a> — CI builds every change on Linux, macOS, FreeBSD and Windows and runs the test suite</li>
+        <li><a href="https://github.com/tuxmaster/QtDMM/blob/master/CHANGELOG">Changelog</a> — what changed between releases</li>
+        <li><a href="docs/dev/" target="_blank" rel="noopener">Adding a protocol or a cable chip</a> — decoder class, protocol table, test vectors under <code>docs/protocols/spec/</code></li>
+        <li><a href="contact.html">Contact</a> — for anything that does not fit into an issue</li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div>QtDMM © 2016–2024 tuxmaster · © 2025–2026 redPanther and contributors · GPL-3.0</div>
+      <nav>
+        <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
+        <a href="docs/" target="_blank" rel="noopener">Handbook</a>
+        <a href="api/" target="_blank" rel="noopener">API</a>
+        <a href="devdocs.html#build">Build</a>
+        <a href="contact.html">Contact</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

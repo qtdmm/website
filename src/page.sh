@@ -8,7 +8,7 @@
 set -euo pipefail
 body=$1; out=$2
 IFS='|' read -r active title desc < <(head -1 "$body" | sed -E 's/^<!-- page: *(.*) -->$/\1/; s/ *\| */|/g')
-nav() { local key=$1 href=$2 label=$3 cls=""; [ "$key" = "$active" ] && cls=' class="active"'; [ "$key" = docs ] || [ "$key" = api ] && cls="$cls"' target="_blank" rel="noopener"'; printf '        <a href="%s"%s>%s</a>\n' "$href" "$cls" "$label"; }
+nav() { local key=$1 href=$2 label=$3 cls=""; [ "$key" = "$active" ] && cls=' class="active"'; printf '        <a href="%s"%s>%s</a>\n' "$href" "$cls" "$label"; }
 {
 cat <<HEAD
 <!DOCTYPE html>
@@ -36,8 +36,7 @@ nav features features.html Features
 nav meters meters.html "Supported Meters"
 [ "${NEWS:-0}" = 1 ] && nav news news.html News
 nav history history.html History
-nav docs docs/ Handbook
-nav api api/ API
+nav devdocs devdocs.html "Docs &amp; Dev"
 nav contact contact.html Contact
 printf '        <a class="cta" href="download.html">Download</a>\n'
 cat <<HEAD
@@ -58,6 +57,7 @@ cat <<FOOT
         <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
         <a href="docs/" target="_blank" rel="noopener">Handbook</a>
         <a href="api/" target="_blank" rel="noopener">API</a>
+        <a href="devdocs.html#build">Build</a>
 FOOT
 [ "${NEWS:-0}" = 1 ] && printf '        <a href="news.html">News</a>\n        <a href="feed.xml">RSS</a>\n'
 cat <<FOOT

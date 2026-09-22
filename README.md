@@ -5,8 +5,8 @@ no framework.
 
 ```
 public/            the site as served (commit it)
-public/docs/       MkDocs handbook, built from ../rp-master — not committed
-public/api/        Doxygen developer docs (cmake target in ../rp-master/build) — not committed
+public/docs/       MkDocs handbook, built from qtdmm-src — not committed
+public/api/        Doxygen developer docs (cmake target in qtdmm-src/build) — not committed
 src/gen_meters.py  supported-devices.md → public/meters.html
 src/page.sh        wraps a page body (templates/pages/*.html) in topbar/footer
 src/gen_news.py    news/*.md → news page, RSS feed, home teaser (hidden while news/ is empty)

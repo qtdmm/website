@@ -18,8 +18,7 @@
         <a href="features.html">Features</a>
         <a href="meters.html">Supported Meters</a>
         <a href="history.html">History</a>
-        <a href="docs/" target="_blank" rel="noopener">Handbook</a>
-        <a href="api/" target="_blank" rel="noopener">API</a>
+        <a href="devdocs.html">Docs &amp; Dev</a>
         <a href="contact.html">Contact</a>
         <a class="cta" href="download.html">Download</a>
       </nav>
@@ -40,7 +39,7 @@
         </div>
         <div class="card dl-card">
           <h3>Linux · macOS · FreeBSD</h3>
-          <p>Build from source with CMake and Qt 6 — see below. A <code>.deb</code> and an Arch <code>PKGBUILD</code> are produced by the build script; distribution packages are welcome.</p>
+          <p>Build from source with CMake and Qt 6 — see <a href="devdocs.html#build">Building from source</a>. A <code>.deb</code> and an Arch <code>PKGBUILD</code> are produced by the build script; distribution packages are welcome.</p>
           <a class="btn btn-outline" href="https://github.com/tuxmaster/QtDMM/releases/latest">Source tarball →</a>
         </div>
         <div class="card dl-card src">
@@ -57,16 +56,11 @@
   <section class="alt">
     <div class="wrap prose">
       <h2>Building from source</h2>
-      <p>Requirements: a C++17 compiler, CMake ≥ 3.16, Qt 6 with the SerialPort and Charts modules, and <code>hidapi</code> for USB‑HID cables (fetched automatically if not installed).</p>
+      <p>Requirements: a C++17 compiler, CMake ≥ 3.16, Qt 6 with the SerialPort and Charts modules, and <code>hidapi</code> for USB‑HID cables. Three CMake commands do the job:</p>
 <pre><code>git clone https://github.com/tuxmaster/QtDMM.git
-cd QtDMM
-./compile.sh          # configure + build into build/
-./compile.sh run      # build and start
-./compile.sh pack     # .deb + source tarball</code></pre>
-      <p><b>Debian/Ubuntu:</b> <code>sudo apt install build-essential cmake qt6-base-dev qt6-serialport-dev qt6-charts-dev libhidapi-dev</code></p>
-      <p><b>Arch:</b> <code>sudo pacman -S cmake qt6-base qt6-serialport qt6-charts hidapi</code> — or use the <code>PKGBUILD</code> in the repository.</p>
-      <p><b>macOS:</b> <code>brew install cmake qt hidapi</code>, then the same steps.</p>
-      <p><b>FreeBSD:</b> <code>pkg install cmake qt6-base qt6-serialport qt6-charts hidapi</code>.</p>
+cmake -S QtDMM -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel</code></pre>
+      <p>Package lists for Debian/Ubuntu, Fedora, Arch, FreeBSD, macOS and a walkthrough for Windows are on the <a href="devdocs.html#build">Docs &amp; Dev page</a>.</p>
       <h2 id="sigrok">Bench meters via sigrok</h2>
       <p>Meters listed with the protocol <code>Sigrok</code> (Keysight, Agilent, HP, Siglent bench meters and any other <code>scpi-dmm</code> model) are read through <a href="https://sigrok.org/wiki/Sigrok-cli">sigrok‑cli</a>, which is not part of QtDMM and has to be installed separately: <code>sudo apt install sigrok-cli</code> (Debian/Ubuntu), <code>sudo pacman -S sigrok-cli</code> (Arch), <code>brew install sigrok-cli</code> (macOS), <code>pkg install sigrok-cli</code> (FreeBSD); Windows builds are on the <a href="https://sigrok.org/wiki/Downloads">sigrok download page</a>. QtDMM finds it in <code>PATH</code> or you set the path under <em>Settings → Special ports</em>. The driver string for your meter is in the <a href="https://sigrok.org/wiki/Supported_hardware#Multimeters">sigrok hardware list</a>; the handbook page <a href="docs/user/bench-meters/" target="_blank" rel="noopener">Bench meters through sigrok‑cli</a> walks through the setup.</p>
       <h2>Serial port permissions</h2>
@@ -80,6 +74,7 @@ cd QtDMM
         <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
         <a href="docs/" target="_blank" rel="noopener">Handbook</a>
         <a href="api/" target="_blank" rel="noopener">API</a>
+        <a href="devdocs.html#build">Build</a>
         <a href="contact.html">Contact</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
