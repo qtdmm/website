@@ -7,8 +7,10 @@
 #   * export FTP_HOST, FTP_USER and FTP_PASS.
 # FTP_DIR is the remote directory (default: /), FTP_PROTO ftp|ftps|sftp
 #
-# The mirror deletes remote files that are not in public/, so .htaccess and
-# .htpasswd (canonical redirect, access protection) are excluded below.
+# The mirror deletes remote files that are not in public/, so files that only
+# exist on the server are excluded below: .htaccess/.htpasswd (canonical
+# redirect, access protection) and the visitor counter's database and salt,
+# which style.php creates in stats/.
 # (default: ftps — plain ftp only if the host really has nothing better).
 #
 #   ./deploy.sh           # build, then mirror
@@ -44,6 +46,7 @@ set ssl:verify-certificate true
 mirror --reverse --delete --verbose --parallel=4 $dry \
   --exclude-glob .DS_Store --exclude-glob '*.swp' \
   --exclude-glob '.htaccess' --exclude-glob '.htpasswd' \
+  --exclude-glob 'stats.sqlite*' --exclude-glob 'salt.txt' \
   public/ $FTP_DIR
 bye
 LFTP

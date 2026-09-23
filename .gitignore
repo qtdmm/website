@@ -8,3 +8,7 @@ qtdmm-src/
 .env
 .mkdocs-site.generated.yml
 src/.gen/
+
+# visitor counter: created on the server by css/style.php
+public/stats/stats.sqlite*
+public/stats/salt.txt

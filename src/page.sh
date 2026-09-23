@@ -20,6 +20,7 @@ cat <<HEAD
   <meta name="description" content="${desc}">
   <link rel="icon" href="img/qtdmm_128.png" type="image/png">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/style.php">
 HEAD
 [ "${NEWS:-0}" = 1 ] && printf '  <link rel="alternate" type="application/rss+xml" title="QtDMM news" href="feed.xml">\n'
 cat <<HEAD

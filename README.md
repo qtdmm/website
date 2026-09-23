@@ -12,6 +12,8 @@ src/page.sh        wraps a page body (templates/pages/*.html) in topbar/footer
 src/gen_news.py    news/*.md → news page, RSS feed, home teaser (hidden while news/ is empty)
 templates/pages/   the page bodies — edit these, not public/*.html
 news/              announcements, one Markdown file each (see news/README.md)
+public/css/style.php   visitor counter: every page links it as a stylesheet
+public/stats/          its SQLite database and the protected evaluation page
 qtdmm-src/         own clone of QtDMM (master), created by build.sh — not committed
 build.sh           pull qtdmm-src, assemble all pages, meters, news, mkdocs, doxygen
 deploy.sh          lftp mirror to the host (credentials from ~/.netrc or env)
@@ -26,6 +28,18 @@ Screenshots: `public/img/meter*.png` / `display*.png` are rendered by the test
 suite (`TEST_METER_DUMP`, `TEST_DISPLAY_DUMP`). Dashed boxes on the pages mark
 where full-window screenshots still need to go; the file name shown is the
 expected path under `tmp/screenshots/`.
+
+## Visitor counter
+
+Every page links `css/style.php` as a stylesheet (added by `src/page.sh`). The
+script answers with empty CSS and records date, time and a salted hash of the
+IP address in `stats/stats.sqlite`, so repeat views on the same day count once.
+The salt (`stats/salt.txt`) and the database are created on the server on first
+use, are not in the repository, and are excluded from the deploy mirror — do
+not delete them there, or the numbers start over. `stats/stats.php` shows the
+figures and is behind HTTP basic auth (`stats/.htaccess`, user file in the
+hosting account). Entries older than 12 months are deleted, which is what
+section 4 of the Datenschutz page promises: **change one, change the other.**
 
 ```bash
 ./build.sh                                   # needs mkdocs
