@@ -7,6 +7,10 @@
 #   LATEST_NEWS   file whose content replaces @LATEST_NEWS@ (home teaser)
 set -euo pipefail
 body=$1; out=$2
+# Canonical URL: one address per page, so search engines stop treating
+# www/non-www and http/https as four different sites.
+canon="https://www.qtdmm.de/$(basename "$out")"
+[ "$(basename "$out")" = index.html ] && canon="https://www.qtdmm.de/"
 IFS='|' read -r active title desc < <(head -1 "$body" | sed -E 's/^<!-- page: *(.*) -->$/\1/; s/ *\| */|/g')
 nav() { local key=$1 href=$2 label=$3 cls=""; [ "$key" = "$active" ] && cls=' class="active"'; printf '        <a href="%s"%s>%s</a>\n' "$href" "$cls" "$label"; }
 {
@@ -20,6 +24,7 @@ cat <<HEAD
   <meta name="description" content="${desc}">
   <link rel="icon" href="img/qtdmm_128.png" type="image/png">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="canonical" href="${canon}">
   <link rel="stylesheet" href="css/style.php">
 HEAD
 [ "${NEWS:-0}" = 1 ] && printf '  <link rel="alternate" type="application/rss+xml" title="QtDMM news" href="feed.xml">\n'

@@ -4,7 +4,7 @@
 # promises none), a canonical URL, and an Edit link.
 INHERIT: @RP@/mkdocs.yml
 docs_dir: @RP@/docs
-site_url: https://qtdmm.de/docs/
+site_url: https://www.qtdmm.de/docs/
 theme:
   name: mkdocs
   highlightjs: false
