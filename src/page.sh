@@ -28,7 +28,7 @@ cat <<HEAD
 <body>
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt=""><span>Qt<b>DMM</b></span></a>
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt="QtDMM logo"><span>Qt<b>DMM</b></span></a>
       <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
       <nav class="nav">
 HEAD
