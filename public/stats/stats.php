@@ -4,6 +4,7 @@ $dbFile = __DIR__ . '/stats.sqlite';
 if (!is_readable($dbFile)) {
     exit("<h1>Statistiken</h1><p>Noch keine Daten.</p>");
 }
+
 $pdo = new PDO('sqlite:' . $dbFile);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

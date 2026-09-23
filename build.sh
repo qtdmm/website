@@ -27,6 +27,8 @@ for body in templates/pages/*.html src/.gen/meters.html src/.gen/news.html; do
   src/page.sh "$body" "public/$name"
 done
 
+src/gen_sitemap.sh
+
 rm -rf public/docs
 # src/mkdocs-site.yml is a template: its INHERIT/docs_dir point at $RP.
 # mkdocs resolves those paths relative to the config file, so write the
