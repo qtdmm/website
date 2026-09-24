@@ -26,6 +26,19 @@ for body in templates/pages/*.html src/.gen/meters.html src/.gen/news.html; do
   [ "$name" = meters.html ] && [ "$body" != src/.gen/meters.html ] && continue   # the template, not the page
   src/page.sh "$body" "public/$name"
 done
+# Figures from the device table (see gen_meters.py) into every page.
+python3 - <<'PY'
+import pathlib
+env = dict(l.split("=", 1) for l in pathlib.Path("src/.gen/counts.env").read_text().split())
+cloud = pathlib.Path("src/.gen/vendor-cloud.html").read_text()
+for page in pathlib.Path("public").glob("*.html"):
+    t = page.read_text()
+    new = t.replace("@VENDOR_CLOUD@", cloud)
+    for k, v in env.items():
+        new = new.replace(f"@{k}@", v)
+    if new != t:
+        page.write_text(new)
+PY
 
 src/gen_sitemap.sh
 

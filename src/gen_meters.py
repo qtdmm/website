@@ -5,6 +5,7 @@ The Markdown table there is itself generated from the decoder registrations,
 so this is the only place on the website that needs to follow the code.
 """
 import re
+from urllib.parse import quote
 import sys
 from pathlib import Path
 
@@ -13,6 +14,18 @@ ROOT = HERE.parent
 SRC = ROOT.parent / "rp-master" / "docs" / "user" / "supported-devices.md"
 TEMPLATE = ROOT / "templates" / "pages" / "meters.html"
 OUT = ROOT / "src" / ".gen" / "meters.html"   # page body; page.sh wraps it
+
+
+# Home's vendor cloud: best-known brands first, the rest alphabetically.
+CLOUD_ORDER = ["Uni-Trend", "Voltcraft", "Metex", "MASTECH", "PeakTech", "Tenma",
+               "Keysight", "Agilent", "HP", "Siglent", "Fluke", "Victron", "Brymen",
+               "APPA", "GW Instek", "Metrel", "Protek", "Velleman", "PCE", "Digitech",
+               "Digitek", "Radioshack", "ELV", "McVoice", "Vichy", "TekPower",
+               "HoldPeak", "Iso-Tech", "Duratool", "Tecpel", "Pro'sKit", "V&A",
+               "Wintex", "SparkFun"]
+CLOUD_LABEL = {"Uni-Trend": "Uni\u2011Trend", "Iso-Tech": "Iso\u2011Tech",
+               "Pro'sKit": "Pro\u2019sKit", "Generic": "DTM0660 generic"}
+CLOUD_SKIP = {"sigrok"}   # not a brand: "any meter sigrok-cli supports"
 
 
 def esc(s: str) -> str:
@@ -111,6 +124,18 @@ def main():
         html = re.sub(r'\s*<div id="hwmod">.*?</div>\n', "\n", html, count=1, flags=re.S)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
+
+    # Figures and the vendor cloud for the other pages: build.sh replaces
+    # @N_METERS@, @N_VENDORS@, @N_PROTOS@ and @VENDOR_CLOUD@ in every page, so
+    # Home, descriptions and headings follow the table instead of drifting.
+    (OUT.parent / "counts.env").write_text(
+        f"N_METERS={len(rows)}\nN_VENDORS={len(vendors)}\nN_PROTOS={len(protos)}\n",
+        encoding="utf-8")
+    ordered = [v for v in CLOUD_ORDER if v in vendors]
+    ordered += [v for v in vendors if v not in CLOUD_ORDER and v not in CLOUD_SKIP]
+    (OUT.parent / "vendor-cloud.html").write_text("".join(
+        f'<a href="meters.html?vendor={quote(v)}">{esc(CLOUD_LABEL.get(v, v))}</a>'
+        for v in ordered), encoding="utf-8")
     print(f"{OUT.relative_to(ROOT)}: {len(rows)} meters, {len(vendors)} vendors, {len(protos)} protocols")
 
 
