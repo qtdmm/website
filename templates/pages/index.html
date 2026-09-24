@@ -4,7 +4,7 @@
       <div>
         <div class="eyebrow">Free software · Linux · Windows · macOS · FreeBSD</div>
         <h1>Your multimeter, <em>on screen</em>.</h1>
-        <p class="lead">QtDMM reads digital multimeters over serial, USB‑HID and network cables — and Victron battery monitors, solar chargers and inverters over Bluetooth LE — shows the reading on an analog needle instrument and an LCD panel, and records it over hours or days with a built‑in transient recorder.</p>
+        <p class="lead">QtDMM reads digital multimeters over serial, USB‑HID and network cables — and over Bluetooth LE from the UNI‑T UT60BT and Victron battery monitors, solar chargers and inverters — shows the reading on an analog needle instrument and an LCD panel, and records it over hours or days with a built‑in transient recorder.</p>
         <div class="actions">
           <a class="btn btn-primary" href="download.html">Download</a>
           <a class="btn btn-outline" href="meters.html">Is my meter supported?</a>
@@ -65,7 +65,21 @@
 
   <section class="alt">
     <div class="wrap">
-      <div class="feature-row flip" style="padding-top:0">
+      <div class="feature-row" style="padding-top:0">
+        <div class="media"><img src="img/ut60bt.png" alt="QtDMM connected to a UNI-T UT60BT over Bluetooth LE: 1.594 V DC from an AA cell on the LCD panel and the analog meter, with min and max" width="1018" height="305"></div>
+        <div>
+          <div class="eyebrow">Bluetooth LE · UNI‑T</div>
+          <h2>No cable at all</h2>
+          <p class="muted">The <b>UNI‑T UT60BT</b> has Bluetooth built in, and QtDMM talks to it directly: press <em>Scan</em>, pick the meter, connect. About twice a second QtDMM asks for a reading and shows what the LCD shows — value, unit and range, AC/DC, HOLD, auto/manual range, diode and continuity, OL.</p>
+          <ul>
+            <li>No adapter, no pairing dialog; when the meter goes out of range, QtDMM reconnects on its own</li>
+            <li>Verified on a real UT60BT, dial position by dial position against its display</li>
+            <li>The UT161A/B/D/E speak the same protocol and are in the list, not yet confirmed on hardware</li>
+          </ul>
+          <p><a href="docs/user/bluetooth/" target="_blank" rel="noopener">Setup in the handbook →</a></p>
+        </div>
+      </div>
+      <div class="feature-row flip">
         <div>
           <div class="eyebrow">Bluetooth LE · Victron</div>
           <h2>Your battery, on the bench</h2>
