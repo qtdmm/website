@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>QtDMM news</title>
+  <link>https://qtdmm.de/news.html</link>
+  <description>Releases and announcements for QtDMM, the digital multimeter readout and recorder.</description>
+  <language>en</language>
+  <atom:link href="https://qtdmm.de/feed.xml" rel="self" type="application/rss+xml"/>
+  <lastBuildDate>Thu, 24 Sep 2026 00:00:00 +0000</lastBuildDate>
+  <item>
+    <title>QtDMM has a new home: github.com/qtdmm</title>
+    <link>https://qtdmm.de/news.html#2026-09-24-new-home</link>
+    <guid isPermaLink="true">https://qtdmm.de/news.html#2026-09-24-new-home</guid>
+    <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+    <description>&lt;p&gt;QtDMM now lives in its own GitHub organization: &lt;strong&gt;&lt;a href=&quot;https://github.com/qtdmm/QtDMM&quot;&gt;github.com/qtdmm/QtDMM&lt;/a&gt;&lt;/strong&gt;.
+tuxmaster, who carried the project since the Qt 5 port, transferred the repository there,
+so nothing was lost: history, releases, issues, stars and forks came along, and the old
+address &lt;code&gt;github.com/tuxmaster/QtDMM&lt;/code&gt; redirects automatically. Existing clones keep working;
+to point yours at the new address:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git remote set-url origin https://github.com/qtdmm/QtDMM.git&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The organization gives the project what a single account cannot: shared maintenance,
+roles, and a home that does not depend on one person. Together with this website it is
+the place for releases, bug reports, new meters and pull requests.&lt;/p&gt;
+&lt;p&gt;Thanks to tuxmaster for years of keeping QtDMM alive — and for handing it over so cleanly.&lt;/p&gt;</description>
+  </item>
+</channel>
+</rss>

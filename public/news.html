@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News – QtDMM</title>
+  <meta name="description" content="Releases and announcements for QtDMM.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="img/qtdmm_128.png" type="image/png">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="canonical" href="https://www.qtdmm.de/news.html">
+  <link rel="stylesheet" href="scripts/style.php">
+  <link rel="alternate" type="application/rss+xml" title="QtDMM news" href="feed.xml">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/qtdmm_128.png" alt="QtDMM logo"><span>Qt<b>DMM</b></span></a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="meters.html">Supported Meters</a>
+        <a href="news.html" class="active">News</a>
+        <a href="history.html">History</a>
+        <a href="devdocs.html">Docs &amp; Dev</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">News</div>
+        <h1 class="page-title">Releases and announcements</h1>
+        <p>Subscribe with the <a href="feed.xml">RSS feed</a>; releases are also listed on <a href="https://github.com/qtdmm/QtDMM/releases">GitHub</a>.</p>
+      </div>
+      <div class="news-list">
+      <article class="news-entry" id="2026-09-24-new-home">
+        <time datetime="2026-09-24">24 Sep 2026</time>
+        <h3><a href="#2026-09-24-new-home">QtDMM has a new home: github.com/qtdmm</a></h3>
+        <div class="news-body"><p>QtDMM now lives in its own GitHub organization: <strong><a href="https://github.com/qtdmm/QtDMM">github.com/qtdmm/QtDMM</a></strong>.
+tuxmaster, who carried the project since the Qt 5 port, transferred the repository there,
+so nothing was lost: history, releases, issues, stars and forks came along, and the old
+address <code>github.com/tuxmaster/QtDMM</code> redirects automatically. Existing clones keep working;
+to point yours at the new address:</p>
+<p><code>git remote set-url origin https://github.com/qtdmm/QtDMM.git</code></p>
+<p>The organization gives the project what a single account cannot: shared maintenance,
+roles, and a home that does not depend on one person. Together with this website it is
+the place for releases, bug reports, new meters and pull requests.</p>
+<p>Thanks to tuxmaster for years of keeping QtDMM alive — and for handing it over so cleanly.</p></div> <a class="news-link" href="https://github.com/qtdmm/QtDMM">→ GitHub</a>
+      </article>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <div>QtDMM © 2016–2024 tuxmaster · © 2025–2026 redPanther and contributors · GPL-3.0</div>
+      <nav>
+        <a href="https://github.com/qtdmm/QtDMM">GitHub</a>
+        <a href="docs/" target="_blank" rel="noopener">Handbook</a>
+        <a href="api/" target="_blank" rel="noopener">API</a>
+        <a href="devdocs.html#build">Build</a>
+        <a href="news.html">News</a>
+        <a href="feed.xml">RSS</a>
+        <a href="contact.html">Contact</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
