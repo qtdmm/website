@@ -40,12 +40,12 @@
         <div class="card dl-card win">
           <h3>Windows</h3>
           <p>Installer (Inno Setup) and a portable ZIP, 64‑bit. Windows 10 or later. USB‑HID cables work without extra drivers; USB‑serial adapters need the vendor's driver.</p>
-          <a class="btn btn-primary" href="https://github.com/qtdmm/QtDMM/releases/latest">Latest release →</a>
+          <a class="btn btn-primary" href="https://github.com/qtdmm/QtDMM/releases/tag/26.1-rc1">26.1-rc1 installer →</a>
         </div>
         <div class="card dl-card">
           <h3>Linux · macOS · FreeBSD</h3>
-          <p>Build from source with CMake and Qt 6 — see <a href="devdocs.html#build">Building from source</a>. A <code>.deb</code> and an Arch <code>PKGBUILD</code> are produced by the build script; distribution packages are welcome. The macOS build has no Bluetooth yet, so Victron and UNI‑T Bluetooth meters are not available there.</p>
-          <a class="btn btn-outline" href="https://github.com/qtdmm/QtDMM/releases/latest">Source tarball →</a>
+          <p>Linux: AppImage below, or build from source with CMake and Qt 6 — see <a href="devdocs.html#build">Building from source</a>. macOS and FreeBSD: build from source; a <code>.deb</code> and an Arch <code>PKGBUILD</code> are produced by the build script, distribution packages are welcome. The macOS build has no Bluetooth yet, so Victron and UNI‑T Bluetooth meters are not available there.</p>
+          <a class="btn btn-outline" href="https://github.com/qtdmm/QtDMM/releases/tag/26.1-rc1">26.1-rc1 AppImage →</a>
         </div>
         <div class="card dl-card src">
           <h3>Source code</h3>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <p class="notice" style="margin-top:32px">The GitHub release page may lag behind the current code. The Windows installer for the latest commit is attached to the <a href="https://github.com/qtdmm/QtDMM/actions">CI workflow run</a> as a build artifact.</p>
+      <p class="notice" style="margin-top:32px"><b>QtDMM 26.1-rc1</b> is the first release candidate since 0.9.8 (2017) — testers welcome, please report problems on <a href="https://github.com/qtdmm/QtDMM/issues">GitHub</a>. Known issues: the AppImage ignores command‑line options (fixed for rc2); on a 1080p Windows screen the settings dialog is taller than the screen and its buttons are cut off, Enter/Esc still work (fixed for rc2); no Bluetooth on macOS yet; the UNI‑T UT61B+/D+/E+ and UT161 are implemented from the vendor's protocol tables but not yet confirmed on real hardware. The GitHub release page may lag behind the current code; the Windows installer for the latest commit is attached to the <a href="https://github.com/qtdmm/QtDMM/actions">CI workflow run</a> as a build artifact.</p>
     </div>
   </section>
 

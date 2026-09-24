@@ -8,6 +8,23 @@
   <atom:link href="https://qtdmm.de/feed.xml" rel="self" type="application/rss+xml"/>
   <lastBuildDate>Thu, 24 Sep 2026 00:00:00 +0000</lastBuildDate>
   <item>
+    <title>QtDMM 26.1-rc1: first release candidate</title>
+    <link>https://qtdmm.de/news.html#2026-09-24-release-26.1-rc1</link>
+    <guid isPermaLink="true">https://qtdmm.de/news.html#2026-09-24-release-26.1-rc1</guid>
+    <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+    <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/qtdmm/QtDMM/releases/tag/26.1-rc1&quot;&gt;QtDMM 26.1-rc1&lt;/a&gt;&lt;/strong&gt; is out — the first release since 0.9.8 (2017). Downloads: a Windows installer and portable ZIP, and a Linux AppImage; for Fedora/Debian-based distributions, macOS and FreeBSD, build from source — see the &lt;a href=&quot;download.html&quot;&gt;download page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is a release candidate: please test and report problems on &lt;a href=&quot;https://github.com/qtdmm/QtDMM/issues&quot;&gt;GitHub&lt;/a&gt;. Known issues in rc1, already fixed for rc2:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The AppImage ignores command-line options (&lt;code&gt;--version&lt;/code&gt;, &lt;code&gt;--config-id&lt;/code&gt;, ...)&lt;/li&gt;
+&lt;li&gt;On a 1080p Windows screen, the settings dialog is taller than the screen and its buttons are cut off (Enter/Esc still work)&lt;/li&gt;
+&lt;li&gt;No Bluetooth on macOS yet — the platform does not give programs the Bluetooth address of a device, which QtDMM needs to find Victron and UNI‑T meters&lt;/li&gt;
+&lt;li&gt;The UNI‑T UT61B+/D+/E+ and UT161 are implemented from the vendor&#x27;s protocol tables but not yet confirmed on real hardware&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The full list of changes is in &lt;a href=&quot;https://github.com/qtdmm/QtDMM/blob/26.1-rc1/CHANGELOG.md&quot;&gt;CHANGELOG&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;New version numbers: 26.1 instead of 1.0.&lt;/strong&gt; QtDMM switches to calendar versioning (&lt;a href=&quot;https://calver.org/&quot;&gt;CalVer&lt;/a&gt;), the scheme used by many large projects such as Ubuntu, LibreOffice, pip and others. The format is &lt;strong&gt;YY.N&lt;/strong&gt;: the year, then a running number for that year&#x27;s releases — 26.1 is the first release of 2026, 26.2 would be the second, 27.1 the first of 2027. A bugfix release is 26.1.1, and release candidates carry a suffix, as in 26.1-rc1.&lt;/p&gt;
+&lt;p&gt;A calendar-based number tells you what you actually want to know: how current a version is, at a glance — and that a 0.9.7 copy is from another decade. It also means a release no longer waits on whether a change feels &quot;big enough&quot; for the next major number; a release happens when master is in good shape. The version comes straight from the git tag, and development builds show where they stand (26.2-dev.14 = 14 changes after 26.1). Details for packagers and contributors: &lt;a href=&quot;docs/dev/releasing/&quot;&gt;Versions and releases&lt;/a&gt; in the developer documentation.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>QtDMM has a new home: github.com/qtdmm</title>
     <link>https://qtdmm.de/news.html#2026-09-24-new-home</link>
     <guid isPermaLink="true">https://qtdmm.de/news.html#2026-09-24-new-home</guid>

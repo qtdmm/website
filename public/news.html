@@ -37,6 +37,21 @@
         <p>Subscribe with the <a href="feed.xml">RSS feed</a>; releases are also listed on <a href="https://github.com/qtdmm/QtDMM/releases">GitHub</a>.</p>
       </div>
       <div class="news-list">
+      <article class="news-entry" id="2026-09-24-release-26.1-rc1">
+        <time datetime="2026-09-24">24 Sep 2026</time>
+        <h3><a href="#2026-09-24-release-26.1-rc1">QtDMM 26.1-rc1: first release candidate</a></h3>
+        <div class="news-body"><p><strong><a href="https://github.com/qtdmm/QtDMM/releases/tag/26.1-rc1">QtDMM 26.1-rc1</a></strong> is out — the first release since 0.9.8 (2017). Downloads: a Windows installer and portable ZIP, and a Linux AppImage; for Fedora/Debian-based distributions, macOS and FreeBSD, build from source — see the <a href="download.html">download page</a>.</p>
+<p>It is a release candidate: please test and report problems on <a href="https://github.com/qtdmm/QtDMM/issues">GitHub</a>. Known issues in rc1, already fixed for rc2:</p>
+<ul>
+<li>The AppImage ignores command-line options (<code>--version</code>, <code>--config-id</code>, ...)</li>
+<li>On a 1080p Windows screen, the settings dialog is taller than the screen and its buttons are cut off (Enter/Esc still work)</li>
+<li>No Bluetooth on macOS yet — the platform does not give programs the Bluetooth address of a device, which QtDMM needs to find Victron and UNI‑T meters</li>
+<li>The UNI‑T UT61B+/D+/E+ and UT161 are implemented from the vendor's protocol tables but not yet confirmed on real hardware</li>
+</ul>
+<p>The full list of changes is in <a href="https://github.com/qtdmm/QtDMM/blob/26.1-rc1/CHANGELOG.md">CHANGELOG</a>.</p>
+<p><strong>New version numbers: 26.1 instead of 1.0.</strong> QtDMM switches to calendar versioning (<a href="https://calver.org/">CalVer</a>), the scheme used by many large projects such as Ubuntu, LibreOffice, pip and others. The format is <strong>YY.N</strong>: the year, then a running number for that year's releases — 26.1 is the first release of 2026, 26.2 would be the second, 27.1 the first of 2027. A bugfix release is 26.1.1, and release candidates carry a suffix, as in 26.1-rc1.</p>
+<p>A calendar-based number tells you what you actually want to know: how current a version is, at a glance — and that a 0.9.7 copy is from another decade. It also means a release no longer waits on whether a change feels "big enough" for the next major number; a release happens when master is in good shape. The version comes straight from the git tag, and development builds show where they stand (26.2-dev.14 = 14 changes after 26.1). Details for packagers and contributors: <a href="docs/dev/releasing/">Versions and releases</a> in the developer documentation.</p></div> <a class="news-link" href="https://github.com/qtdmm/QtDMM/releases/tag/26.1-rc1">→ GitHub</a>
+      </article>
       <article class="news-entry" id="2026-09-24-new-home">
         <time datetime="2026-09-24">24 Sep 2026</time>
         <h3><a href="#2026-09-24-new-home">QtDMM has a new home: github.com/qtdmm</a></h3>
