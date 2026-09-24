@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Digital multimeter readout and recorder – QtDMM</title>
-  <meta name="description" content="QtDMM reads and records digital multimeters on Linux, Windows, macOS and FreeBSD: analog meter, LCD display, recorder, 151 meters. GPL-3.0.">
+  <meta name="description" content="QtDMM reads and records digital multimeters on Linux, Windows, macOS and FreeBSD: analog meter, LCD display, recorder, 156 meters. GPL-3.0.">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="img/qtdmm_128.png" type="image/png">
   <link rel="stylesheet" href="css/site.css">
@@ -101,7 +101,7 @@
           <ul>
             <li>No adapter, no pairing dialog; when the meter goes out of range, QtDMM reconnects on its own</li>
             <li>Verified on a real UT60BT, dial position by dial position against its display</li>
-            <li>The UT161A/B/D/E speak the same protocol and are in the list, not yet confirmed on hardware</li>
+            <li>Same protocol family, in the list but <b>not yet tried on real hardware</b> — reports welcome: UT61E+, UT61D+ and UT61B+ with the UT‑D07B Bluetooth adapter (or their UT‑D09 USB cable), and the UT161B/D/E with built‑in Bluetooth</li>
           </ul>
           <p><a href="docs/user/bluetooth/" target="_blank" rel="noopener">Setup in the handbook →</a></p>
         </div>
@@ -157,12 +157,12 @@ $ ./qtdmm_bridge.py --port 4000=/dev/ttyUSB0 \
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Supported meters</div>
-        <h2>151 meters, one program</h2>
+        <h2>156 meters, one program</h2>
         <p>Every model is selected from a vendor/model list that fills in the serial settings for you. Unknown meters that speak a known protocol work with manual settings.</p>
       </div>
       <div class="stat-row">
-        <div><span class="stat">151</span><small>meters &amp; devices</small></div>
-        <div><span class="stat">25</span><small>wire protocols</small></div>
+        <div><span class="stat">156</span><small>meters &amp; devices</small></div>
+        <div><span class="stat">26</span><small>wire protocols</small></div>
         <div><span class="stat">5</span><small>connection backends</small></div>
         <div><span class="stat">5</span><small>languages</small></div>
       </div>
