@@ -2,7 +2,7 @@
 // style.php - minimalistischer Visitor-Tracker mit SQLite.
 // Wird von jeder Seite als Stylesheet eingebunden (siehe src/page.sh) und
 // liefert leeres CSS zurueck; gezaehlt wird der Abruf selbst.
-$statsDir = __DIR__ . '/../stats';
+$statsDir = __DIR__ . '/../conf';
 $dbFile   = $statsDir . '/stats.sqlite';
 
 // Antwort zuerst: leeres CSS, und niemals aus dem Cache - sonst zaehlt ein

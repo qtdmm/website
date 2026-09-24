@@ -26,7 +26,7 @@ cat <<HEAD
   <link rel="icon" href="img/qtdmm_128.png" type="image/png">
   <link rel="stylesheet" href="css/site.css">
   <link rel="canonical" href="${canon}">
-  <link rel="stylesheet" href="css/style.php">
+  <link rel="stylesheet" href="scripts/style.php">
 HEAD
 [ "${NEWS:-0}" = 1 ] && printf '  <link rel="alternate" type="application/rss+xml" title="QtDMM news" href="feed.xml">\n'
 cat <<HEAD

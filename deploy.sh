@@ -10,7 +10,7 @@
 # The mirror deletes remote files that are not in public/, so files that only
 # exist on the server are excluded below: .htaccess/.htpasswd (canonical
 # redirect, access protection), the visitor counter's database and salt,
-# which style.php creates in stats/, and the Bing/Google site verification
+# which scripts/style.php creates in conf/, and the Bing/Google site verification
 # files, which live only on the server.
 # (default: ftps — plain ftp only if the host really has nothing better).
 #

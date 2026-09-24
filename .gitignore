@@ -9,9 +9,9 @@ qtdmm-src/
 .mkdocs-site.generated.yml
 src/.gen/
 
-# visitor counter: created on the server by css/style.php
-public/stats/stats.sqlite*
-public/stats/salt.txt
+# visitor counter: created on the server by scripts/style.php
+public/conf/stats.sqlite*
+public/conf/salt.txt
 
 # search engine site verification: only on the server, see deploy.sh
 public/BingSiteAuth.xml

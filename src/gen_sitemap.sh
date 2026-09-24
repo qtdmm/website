@@ -21,8 +21,8 @@ today=$(date +%F)
 cat > public/robots.txt <<ROBOTS
 User-agent: *
 Allow: /
-Disallow: /stats/
-Disallow: /css/style.php
+Disallow: /conf/
+Disallow: /scripts/
 
 Sitemap: $base/sitemap.xml
 ROBOTS

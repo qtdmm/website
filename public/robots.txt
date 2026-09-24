@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /stats/
-Disallow: /css/style.php
+Disallow: /conf/
+Disallow: /scripts/
 
 Sitemap: https://www.qtdmm.de/sitemap.xml
