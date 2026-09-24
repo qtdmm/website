@@ -131,6 +131,8 @@ section:not(.alt) .card { background: var(--bezel-2); }
 .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 40px 0; border-bottom: 1px solid var(--chrome); }
 .feature-row:last-child { border-bottom: 0; }
 .feature-row.flip .media { order: 2; }
+/* grid items default to min-width:auto and grow with long <pre> lines */
+.feature-row > *, .grid > *, .hero .wrap > * { min-width: 0; }
 .feature-row .media img { border-radius: 10px; box-shadow: 0 12px 30px rgba(0,0,0,.5); }
 .feature-row ul { padding-left: 1.2em; color: var(--dial-dim); }
 .feature-row li { margin-bottom: .35em; }
@@ -195,6 +197,7 @@ footer a:hover { color: var(--lcd); }
 @media (max-width: 900px) {
   .hero .wrap, .grid-3, .grid-2, .feature-row { grid-template-columns: 1fr; }
   .feature-row.flip .media { order: 0; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
   .hero { padding: 40px 0; }
   h1 { font-size: 2rem; }
   .nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--bezel);

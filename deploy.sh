@@ -9,8 +9,9 @@
 #
 # The mirror deletes remote files that are not in public/, so files that only
 # exist on the server are excluded below: .htaccess/.htpasswd (canonical
-# redirect, access protection) and the visitor counter's database and salt,
-# which style.php creates in stats/.
+# redirect, access protection), the visitor counter's database and salt,
+# which style.php creates in stats/, and the Bing/Google site verification
+# files, which live only on the server.
 # (default: ftps — plain ftp only if the host really has nothing better).
 #
 #   ./deploy.sh           # build, then mirror
@@ -47,6 +48,7 @@ mirror --reverse --delete --verbose --parallel=4 $dry \
   --exclude-glob .DS_Store --exclude-glob '*.swp' \
   --exclude-glob '.htaccess' --exclude-glob '.htpasswd' \
   --exclude-glob 'stats.sqlite*' --exclude-glob 'salt.txt' \
+  --exclude-glob 'BingSiteAuth.xml' --exclude-glob 'google*.html' \
   public/ $FTP_DIR
 bye
 LFTP

@@ -12,3 +12,7 @@ src/.gen/
 # visitor counter: created on the server by css/style.php
 public/stats/stats.sqlite*
 public/stats/salt.txt
+
+# search engine site verification: only on the server, see deploy.sh
+public/BingSiteAuth.xml
+public/google*.html

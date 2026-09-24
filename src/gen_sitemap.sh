@@ -10,6 +10,7 @@ today=$(date +%F)
   echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
   for f in public/*.html; do
     name=${f#public/}
+    case $name in google*.html) continue;; esac
     loc="$base/$name"
     [ "$name" = index.html ] && loc="$base/"
     printf '  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n' "$loc" "$today"
