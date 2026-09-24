@@ -4,7 +4,7 @@
       <div class="section-head">
         <div class="eyebrow">News</div>
         <h2>Releases and announcements</h2>
-        <p>Subscribe with the <a href="feed.xml">RSS feed</a>; releases are also listed on <a href="https://github.com/tuxmaster/QtDMM/releases">GitHub</a>.</p>
+        <p>Subscribe with the <a href="feed.xml">RSS feed</a>; releases are also listed on <a href="https://github.com/qtdmm/QtDMM/releases">GitHub</a>.</p>
       </div>
       <div class="news-list">
 @ENTRIES@

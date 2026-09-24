@@ -1,6 +1,6 @@
 # qtdmm.de
 
-Static website for [QtDMM](https://github.com/tuxmaster/QtDMM). Plain HTML/CSS,
+Static website for [QtDMM](https://github.com/qtdmm/QtDMM). Plain HTML/CSS,
 no framework.
 
 ```

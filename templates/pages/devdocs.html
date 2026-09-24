@@ -30,7 +30,7 @@
     <div class="wrap prose">
       <h2 id="build">Building from source</h2>
       <p>QtDMM needs a C++17 compiler, CMake ≥ 3.16, Qt 6 with the <b>SerialPort</b>, <b>Charts</b>, <b>SVG</b> and <b>Linguist tools</b> modules, and <code>hidapi</code> for USB‑HID cables. Qt <b>Bluetooth</b> (<em>Connectivity</em>) is optional — without it the program is built without the Bluetooth LE port. Install the packages for your system — the lists below are what the CI builds use; package names can differ between distributions and releases, so if one is not found, search your package manager for the Qt 6 module (<code>serialport</code>, <code>charts</code>, <code>connectivity</code>, <code>tools</code>) and for <code>hidapi</code>. Then the steps are the same everywhere:</p>
-<pre><code>git clone https://github.com/tuxmaster/QtDMM.git
+<pre><code>git clone https://github.com/qtdmm/QtDMM.git
 cd QtDMM
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel
@@ -63,13 +63,13 @@ sudo cmake --install build          # optional: install system‑wide</code></pr
 
       <h3>Windows</h3>
       <p>This is how the CI builds the installer; it uses Visual Studio 2022 (the free <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Build Tools</a> are enough — select the <em>Desktop development with C++</em> workload) and Qt from the <a href="https://www.qt.io/download-open-source">Qt online installer</a>. In the installer pick a Qt 6.8 release with the <em>MSVC 2022 64‑bit</em> kit and the additional modules <em>Qt Serial Port</em>, <em>Qt Charts</em> and <em>Qt Connectivity</em> (Qt SVG is part of the base installation). <code>hidapi</code> is fetched and compiled by CMake automatically. Then, in an <em>x64 Native Tools Command Prompt for VS 2022</em>:</p>
-<pre><code>git clone https://github.com/tuxmaster/QtDMM.git
+<pre><code>git clone https://github.com/qtdmm/QtDMM.git
 cd QtDMM
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release ^
     -DCMAKE_PREFIX_PATH=C:\Qt\6.8.3\msvc2022_64
 cmake --build build
 cmake --install build --prefix dist      # dist\qtdmm.exe plus the Qt DLLs (windeployqt runs automatically)</code></pre>
-      <p>Adjust the Qt path to the version you installed. <code>cpack --config build\CPackConfig.cmake</code> produces the portable ZIP and, with <a href="https://jrsoftware.org/isinfo.php">Inno Setup</a> installed, the installer — exactly what the <a href="https://github.com/tuxmaster/QtDMM/actions">GitHub workflow</a> publishes, so if you just want to run a current build, take its artifact instead.</p>
+      <p>Adjust the Qt path to the version you installed. <code>cpack --config build\CPackConfig.cmake</code> produces the portable ZIP and, with <a href="https://jrsoftware.org/isinfo.php">Inno Setup</a> installed, the installer — exactly what the <a href="https://github.com/qtdmm/QtDMM/actions">GitHub workflow</a> publishes, so if you just want to run a current build, take its artifact instead.</p>
 
       <h3>After the build</h3>
       <p>On Linux, add yourself to the group that owns the serial port (<code>dialout</code> on Debian/Ubuntu/Fedora, <code>uucp</code> on Arch) and log in again; QtDMM names the group if it cannot open a port. Bench meters through sigrok need <code>sigrok-cli</code> installed separately — see the <a href="download.html#sigrok">download page</a>. The API documentation is built with <code>cmake --build build --target doxygen</code> when Doxygen (and optionally Graphviz) is installed.</p>
@@ -79,11 +79,11 @@ cmake --install build --prefix dist      # dist\qtdmm.exe plus the Qt DLLs (wind
   <section>
     <div class="wrap prose">
       <h2>Contributing</h2>
-      <p>Development happens on <a href="https://github.com/tuxmaster/QtDMM">github.com/tuxmaster/QtDMM</a>. Bug reports, meters that work or don't, and pull requests go there:</p>
+      <p>Development happens on <a href="https://github.com/qtdmm/QtDMM">github.com/qtdmm/QtDMM</a>. Bug reports, meters that work or don't, and pull requests go there:</p>
       <ul>
-        <li><a href="https://github.com/tuxmaster/QtDMM/issues">Issues</a> — bugs, feature requests, protocol captures of unsupported meters</li>
-        <li><a href="https://github.com/tuxmaster/QtDMM/pulls">Pull requests</a> — CI builds every change on Linux, macOS, FreeBSD and Windows and runs the test suite</li>
-        <li><a href="https://github.com/tuxmaster/QtDMM/blob/master/CHANGELOG">Changelog</a> — what changed between releases</li>
+        <li><a href="https://github.com/qtdmm/QtDMM/issues">Issues</a> — bugs, feature requests, protocol captures of unsupported meters</li>
+        <li><a href="https://github.com/qtdmm/QtDMM/pulls">Pull requests</a> — CI builds every change on Linux, macOS, FreeBSD and Windows and runs the test suite</li>
+        <li><a href="https://github.com/qtdmm/QtDMM/blob/master/CHANGELOG">Changelog</a> — what changed between releases</li>
         <li><a href="docs/dev/" target="_blank" rel="noopener">Adding a protocol or a cable chip</a> — decoder class, protocol table, test vectors under <code>docs/protocols/spec/</code></li>
         <li><a href="contact.html">Contact</a> — for anything that does not fit into an issue</li>
       </ul>

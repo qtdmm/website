@@ -38,21 +38,21 @@
         <div class="card dl-card win">
           <h3>Windows</h3>
           <p>Installer (Inno Setup) and a portable ZIP, 64‑bit. Windows 10 or later. USB‑HID cables work without extra drivers; USB‑serial adapters need the vendor's driver.</p>
-          <a class="btn btn-primary" href="https://github.com/tuxmaster/QtDMM/releases/latest">Latest release →</a>
+          <a class="btn btn-primary" href="https://github.com/qtdmm/QtDMM/releases/latest">Latest release →</a>
         </div>
         <div class="card dl-card">
           <h3>Linux · macOS · FreeBSD</h3>
           <p>Build from source with CMake and Qt 6 — see <a href="devdocs.html#build">Building from source</a>. A <code>.deb</code> and an Arch <code>PKGBUILD</code> are produced by the build script; distribution packages are welcome.</p>
-          <a class="btn btn-outline" href="https://github.com/tuxmaster/QtDMM/releases/latest">Source tarball →</a>
+          <a class="btn btn-outline" href="https://github.com/qtdmm/QtDMM/releases/latest">Source tarball →</a>
         </div>
         <div class="card dl-card src">
           <h3>Source code</h3>
           <p>Development happens on GitHub. Issues, pull requests and reports of meters that work (or don't) are welcome.</p>
-          <a class="btn btn-red" href="https://github.com/tuxmaster/QtDMM">github.com/tuxmaster/QtDMM →</a>
+          <a class="btn btn-red" href="https://github.com/qtdmm/QtDMM">github.com/qtdmm/QtDMM →</a>
         </div>
       </div>
 
-      <p class="notice" style="margin-top:32px">The GitHub release page may lag behind the current code. The Windows installer for the latest commit is attached to the <a href="https://github.com/tuxmaster/QtDMM/actions">CI workflow run</a> as a build artifact.</p>
+      <p class="notice" style="margin-top:32px">The GitHub release page may lag behind the current code. The Windows installer for the latest commit is attached to the <a href="https://github.com/qtdmm/QtDMM/actions">CI workflow run</a> as a build artifact.</p>
     </div>
   </section>
 
@@ -60,7 +60,7 @@
     <div class="wrap prose">
       <h2>Building from source</h2>
       <p>Requirements: a C++17 compiler, CMake ≥ 3.16, Qt 6 with the SerialPort and Charts modules, and <code>hidapi</code> for USB‑HID cables. Three CMake commands do the job:</p>
-<pre><code>git clone https://github.com/tuxmaster/QtDMM.git
+<pre><code>git clone https://github.com/qtdmm/QtDMM.git
 cmake -S QtDMM -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel</code></pre>
       <p>Package lists for Debian/Ubuntu, Fedora, Arch, FreeBSD, macOS and a walkthrough for Windows are on the <a href="devdocs.html#build">Docs &amp; Dev page</a>.</p>
@@ -74,7 +74,7 @@ cmake --build build --parallel</code></pre>
     <div class="wrap">
       <div>QtDMM © 2016–2024 tuxmaster · © 2025–2026 redPanther and contributors · GPL-3.0</div>
       <nav>
-        <a href="https://github.com/tuxmaster/QtDMM">GitHub</a>
+        <a href="https://github.com/qtdmm/QtDMM">GitHub</a>
         <a href="docs/" target="_blank" rel="noopener">Handbook</a>
         <a href="api/" target="_blank" rel="noopener">API</a>
         <a href="devdocs.html#build">Build</a>

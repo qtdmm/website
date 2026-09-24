@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 # feature branch). Cloned on first use, pulled on every build.
 RP=${RP_MASTER:-qtdmm-src}
 if [ ! -d "$RP/.git" ]; then
-  git clone -q git@github.com:redPanther/QtDMM.git "$RP"
+  git clone -q git@github.com:qtdmm/QtDMM.git "$RP"
 fi
 git -C "$RP" checkout -q master && git -C "$RP" pull -q --ff-only
 [ -d "$RP/build" ] || cmake -S "$RP" -B "$RP/build" -DCMAKE_BUILD_TYPE=Release >/dev/null
